@@ -4,7 +4,7 @@ import globalContext from "../context/globalContext";
 function Header() {
   const { state } = useContext(globalContext)
   return (
-    <header>createStore()</header>
+    <header>createStore({ state })</header>
   )
 }
 

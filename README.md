@@ -1,6 +1,6 @@
 # Projeto createStore() - Marina
 
-Site / App de compras :shopping: para trabalhar conhecimentos de React e Hooks, utilizando API do Mercado Livre.
+Site / App de compras :shopping: para trabalhar conhecimentos de React Hooks, utilizando API do Mercado Livre.
 
 ## Lista de requisitos
 ---

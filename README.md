@@ -1,39 +1,31 @@
 # Projeto createStore() - Marina
 
-Site / App de compras :shopping: para trabalhar conhecimentos de React e Hooks, utilizando API do Mercado Livre.
+Site / App de compras :shopping: para trabalhar conhecimentos de React Hooks, utilizando API do Mercado Livre.
 
 ## Lista de requisitos
 ---
 
-#### 1. Implemente o módulo de acesso à api do Mercado Livre
+## Documentação da API do Mercado Livre
+Sua página web irá consumir os dados da API do Mercado Livre para realizar a busca de itens da sua loja online. Para realizar essas buscas, vocês precisarão consultar os seguintes endpoints:
 
-**PRIORIDADE 0** - Implemente um módulo que acessa a API do Mercado Livre
+- Para listar as categorias disponíveis:
+  - Tipo da requisição: `GET`
+  - Endpoint: https://api.mercadolibre.com/sites/MLB/categories
+- Para buscar por itens por termo:
+  - Tipo da requisição: `GET`
+  - Parâmetro de busca $QUERY (este parâmetro deve ser substituído pelo valor do campo de busca)
+  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?q=$QUERY
+- Para buscar itens por categoria:
+  - Tipo da requisição: `GET`
+  - Parâmetro de busca $CATEGORY_ID (este parâmetro deve ser substituído pelo ID da categoria selecionada)
+  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?category=$CATEGORY_ID
+- Para buscar itens de uma categoria por termo:
+  - Tipo da requisição: `GET`
+  - Parâmetro de busca $QUERY (este parâmetro deve ser substituído pelo valor do campo de busca)
+  - Parâmetro de busca $CATEGORY_ID (este parâmetro deve ser substituído pelo ID da categoria selecionada)
+  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?category=$CATEGORY_ID&q=$QUERY
 
-**Observações técnicas**
-
-Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services/api.js` para acessar a API do Mercado Livre em sua aplicação.  Utilize (**OBRIGATORIAMENTE**) o módulo **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)** para realizar as requisições. Já deixamos 2 funções a serem implementadas para isso e é **importante utilizar apenas estas 2 funções e mantê-las com esses nomes** para que os testes possam ser validados.
-**Nota importante:** precisamos lembrar que todos os fetchs ao rodar os testes das chamadas de API serão mockados, portanto se fazer alguma dessas chamadas com um outro fetch dentro da função, isso pode gerar algum problema na validação.
-
-
-```javascript
-export async function getCategories() {
-  // Implemente aqui
-}
-
-export async function getProductsFromCategoryAndQuery(/* categoryId, query */) {
-  // Implemente aqui! Quando o fizer, descomente os parâmetros que essa função recebe
-}
-```
-
-Essas funções devem realizar uma chamada para a API do Mercado Livre e retornar uma [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) com os dados de resultado. Com essa implementação, o uso dessas funções deve ser algo parecido com o exemplo abaixo:
-
-```javascript
-import * as api from './services/api'
-
-api.getCategories().then(categories => { console.log(categories) })
-```
-
-A variável `categories` deve conter o objeto JSON com as categorias obtidas através da chamada da API do Mercado Livre:
+Exemplo de como a requisição de categorias é recebida:
 
 ```json
 [
@@ -50,12 +42,6 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
       "name": "Alimentos e Bebidas"
   }
 ]
-```
-
-O que será verificado:
-```
-  - Implementa a função `getCategories`.
-  - Implementa a função `getProductsFromCategoryAndQuery`.
 ```
 
 #### 2. Crie uma página de listagem de produtos vazia

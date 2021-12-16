@@ -10,7 +10,7 @@ function Provider({ children }) {
 
   return (
     <globalContext.Provider value={ provideObj }>
-      {children}
+      { children }
     </globalContext.Provider>
   )
 }

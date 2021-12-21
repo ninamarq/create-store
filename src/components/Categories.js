@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Principal from '../pages/Principal';
 import { getCategories } from '../services/productsAPI';
 
 export default function Categories() {
@@ -13,11 +14,17 @@ export default function Categories() {
     <aside>
       {
         categories.map((element) => (
-          <section
+          <label
             key={ element.id }
+            htmlFor={ element.id }
           >
             { element.name }
-          </section>
+            <input
+              id={ element.id }
+              type="radio"
+              name="category"
+            />
+          </label>
         ))
       }
     </aside>

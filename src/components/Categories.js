@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Principal from '../pages/Principal';
 import { getCategories } from '../services/productsAPI';
 
 export default function Categories() {

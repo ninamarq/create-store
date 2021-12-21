@@ -4,6 +4,7 @@ import Categories from './components/Categories';
 import Header from './components/Header';
 import Provider from './context/globalProvider';
 import Principal from './pages/Principal';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Categories />
         <Routes>
           <Route path="/" element={ <Principal /> } />
+          <Route path="/cart" element={ <Cart /> } />
         </Routes>
       </BrowserRouter>
     </Provider>

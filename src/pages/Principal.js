@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import globalContext from '../context/globalContext';
 
 export default function Principal() {
   const navigate = useNavigate()
-  
+  const { handleSearch, products } = useContext(globalContext);
+
+
+  console.log(products);
   function redirectCart() {
     navigate('/cart');
   }
@@ -13,7 +17,8 @@ export default function Principal() {
       <label>
         <input
           type="text"
-          placeholder='🔎'
+          placeholder="🔎"
+          onChange={ handleSearch }
         />
       </label>
       <h4>

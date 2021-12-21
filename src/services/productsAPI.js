@@ -21,7 +21,7 @@ export function getProductsByQuery(query) {
   return (
     fetch(URL)
       .then((response) => response.json())
-      .then((data) => data)
+      .then((data) => data.results)
   );
 }
 

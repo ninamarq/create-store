@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import globalContext from './globalContext';
+import { getProductsByQuery } from '../services/productsAPI';
 
 function Provider({ children }) {
-  const [state] = useState("testando context e provider");
+  const [products, setProducts] = useState([]);
+
+  function handleSearch({ target }) {
+    setProducts(async () => {
+      const result = await getProductsByQuery(target.value)
+      return result
+    });
+  }
 
   const provideObj = {
-    state,
+    products,
+    setProducts,
+    handleSearch,
   };
 
   return (

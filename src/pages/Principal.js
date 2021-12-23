@@ -6,8 +6,8 @@ import { getProductsByQuery } from '../services/productsAPI';
 
 export default function Principal() {
   const navigate = useNavigate()
-  const { handleSearch, search } = useContext(globalContext);
-  const [products, setProducts] = useState([]);
+  const { handleSearch, search,
+    products, setProducts } = useContext(globalContext);
 
   async function handleClickSearch() {
     const productsResult = await getProductsByQuery(search);

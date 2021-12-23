@@ -30,6 +30,6 @@ export function getProductsByCategory({ id }) {
   return (
     fetch(URL)
       .then((response) => response.json())
-      .then((data) => data)
+      .then((data) => data.results)
   );
 }

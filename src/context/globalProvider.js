@@ -8,7 +8,7 @@ function Provider({ children }) {
   const [products, setProducts] = useState([]);
 
   async function handleSearch({ target }) {
-    setSearch(target.value);
+   setSearch(target.value);
   }
 
   // Trabalhar aqui amanhã!

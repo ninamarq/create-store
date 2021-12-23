@@ -6,7 +6,7 @@ import { getProductsByQuery } from '../services/productsAPI';
 
 export default function Principal() {
   const navigate = useNavigate()
-  const { handleSearch, search,
+  const { handleSearch, search, category,
     products, setProducts } = useContext(globalContext);
 
   async function handleClickSearch() {
@@ -17,6 +17,14 @@ export default function Principal() {
   function redirectCart() {
     navigate('/cart');
   }
+
+  const verifyProducts = (
+    products.length === 0 ?
+      (<h4>
+        Digite algum termo de pesquisa ou escolha uma categoria
+      </h4>)
+      : <ProductCard list={ products }/>
+  );
 
   return (
     <div>
@@ -40,11 +48,10 @@ export default function Principal() {
         🛒
       </button>
       {
-        products.length === 0 ?
-        (<h4>
-          Digite algum termo de pesquisa ou escolha uma categoria
-        </h4>)
-        : <ProductCard list={ products }/>
+        category.length === 0 ? verifyProducts
+        : (
+          <ProductCard list={ products }/>
+        )
       }
     </div>
   );

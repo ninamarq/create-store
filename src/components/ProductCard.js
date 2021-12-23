@@ -2,6 +2,7 @@ import React from "react";
 
 export default function ProductCard(props) {
   const { list } = props;
+  // console.log(list);
   return (
     <div>
       {

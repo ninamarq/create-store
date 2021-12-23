@@ -1,13 +1,19 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import globalContext from '../context/globalContext';
+import ProductCard from '../components/ProductCard';
+import { getProductsByQuery } from '../services/productsAPI';
 
 export default function Principal() {
   const navigate = useNavigate()
-  const { handleSearch, products } = useContext(globalContext);
+  const { handleSearch, search } = useContext(globalContext);
+  const [products, setProducts] = useState([]);
 
+  async function handleClickSearch() {
+    const productsResult = await getProductsByQuery(search);
+    setProducts(productsResult);
+  }
 
-  console.log(products);
   function redirectCart() {
     navigate('/cart');
   }
@@ -17,19 +23,29 @@ export default function Principal() {
       <label>
         <input
           type="text"
-          placeholder="🔎"
           onChange={ handleSearch }
+          placeholder="Digite o produto"
         />
+        <button
+          type="button"
+          onClick={ handleClickSearch }
+        >
+          Buscar 🔎
+        </button>
       </label>
-      <h4>
-        Digite algum termo de pesquisa ou escolha uma categoria
-      </h4>
       <button
         type="button"
         onClick={ redirectCart }
       >
         🛒
       </button>
+      {
+        products.length === 0 ?
+        (<h4>
+          Digite algum termo de pesquisa ou escolha uma categoria
+        </h4>)
+        : <ProductCard list={ products }/>
+      }
     </div>
   );
 }

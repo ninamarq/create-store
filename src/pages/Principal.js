@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import globalContext from '../context/globalContext';
 import ProductCard from '../components/ProductCard';
-import { getProductsByQuery } from '../services/productsAPI';
+import { getProductsByQuery, getProductsFromCategoryAndQuery } from '../services/productsAPI';
 
 export default function Principal() {
   const navigate = useNavigate()
@@ -10,8 +10,17 @@ export default function Principal() {
     products, setProducts } = useContext(globalContext);
 
   async function handleClickSearch() {
-    const productsResult = await getProductsByQuery(search);
-    setProducts(productsResult);
+    if (category.length === 0) {
+      const productsResult = await getProductsByQuery(search);
+      setProducts(productsResult);
+    } else {
+      const productsQueryCat = await getProductsFromCategoryAndQuery(category, search);
+      
+      // RESOLVER PROBLEMA DE BUSCA PELOS DOIS FATORES.
+
+      console.log(productsQueryCat);
+      setProducts(productsQueryCat);
+    }
   }
 
   function redirectCart() {

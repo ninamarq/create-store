@@ -10,8 +10,10 @@ export default function Principal() {
     products, setProducts } = useContext(globalContext);
 
   useEffect(async () => {
-    const initial_products = await getProductsByQuery("gamer");
-    setProducts(initial_products);
+    if (category.length === 0 && search.length === 0) {
+      const initial_products = await getProductsByQuery("gamer");
+      setProducts(initial_products);
+    }
   }, []);
 
   async function handleClickSearch() {

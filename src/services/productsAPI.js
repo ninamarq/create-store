@@ -12,7 +12,7 @@ export function getProductsFromCategoryAndQuery({ id }, query) {
   return (
     fetch(URL)
       .then((response) => response.json())
-      .then((data) => data)
+      .then((data) => data.results)
   );
 }
 
@@ -21,7 +21,7 @@ export function getProductsByQuery(query) {
   return (
     fetch(URL)
       .then((response) => response.json())
-      .then((data) => data)
+      .then((data) => data.results)
   );
 }
 
@@ -30,6 +30,6 @@ export function getProductsByCategory({ id }) {
   return (
     fetch(URL)
       .then((response) => response.json())
-      .then((data) => data)
+      .then((data) => data.results)
   );
 }

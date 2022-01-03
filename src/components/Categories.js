@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import globalContext from '../context/globalContext';
 import { getCategories } from '../services/productsAPI';
 
 export default function Categories() {
@@ -9,15 +10,24 @@ export default function Categories() {
     setCategories(responseCat);
   }, []);
 
+  const { selectCategory } = useContext(globalContext);
+
   return (
     <aside>
       {
         categories.map((element) => (
-          <section
+          <label
             key={ element.id }
+            htmlFor={ element.id }
           >
             { element.name }
-          </section>
+            <input
+              id={ element.id }
+              type="radio"
+              name="category"
+              onClick={ selectCategory }
+            />
+          </label>
         ))
       }
     </aside>

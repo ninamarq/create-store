@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import globalContext from '../context/globalContext';
 import ProductCard from '../components/ProductCard';
@@ -9,16 +9,18 @@ export default function Principal() {
   const { handleSearch, search, category,
     products, setProducts } = useContext(globalContext);
 
+  useEffect(async () => {
+    const initial_products = await getProductsByQuery("gamer");
+    setProducts(initial_products);
+  }, []);
+
   async function handleClickSearch() {
     if (category.length === 0) {
       const productsResult = await getProductsByQuery(search);
       setProducts(productsResult);
-    } else {
+    }
+    if (category.length > 0) {
       const productsQueryCat = await getProductsFromCategoryAndQuery(category, search);
-      
-      // RESOLVER PROBLEMA DE BUSCA PELOS DOIS FATORES.
-
-      console.log(productsQueryCat);
       setProducts(productsQueryCat);
     }
   }
@@ -30,7 +32,7 @@ export default function Principal() {
   const verifyProducts = (
     products.length === 0 ?
       (<h4>
-        Digite algum termo de pesquisa ou escolha uma categoria
+        Nenhum produto foi encontrado!
       </h4>)
       : <ProductCard list={ products }/>
   );

@@ -6,6 +6,7 @@ function Provider({ children }) {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
   const [products, setProducts] = useState([]);
+  const [details, setDetail] = useState({});
 
   async function handleSearch({ target }) {
    setSearch(target.value);
@@ -25,6 +26,8 @@ function Provider({ children }) {
     category,
     products,
     setProducts,
+    details,
+    setDetail,
   };
 
   return (

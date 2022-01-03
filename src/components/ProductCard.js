@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from 'react';
+import globalContext from '../context/globalContext';
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard(props) {
   const { list } = props;
+  const navigate = useNavigate();
+  const { setDetail } = useContext(globalContext);
+
   return (
     <div>
       {
@@ -16,7 +21,16 @@ export default function ProductCard(props) {
               alt={ product.title }
               width="200px"
             />
-            <p>R${ product.price }</p>
+            <p>R${ product.price.toFixed(2) }</p>
+            <button
+              onClick={() => {
+                setDetail(product);
+                navigate(`products/${ product.id }`)
+              }}
+            >
+              Mais detalhes
+            </button>
+            <button>Adicionar ao Carrinho</button>
           </section>
         ))
       }

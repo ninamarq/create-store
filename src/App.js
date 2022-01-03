@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Provider from './context/globalProvider';
 import Principal from './pages/Principal';
 import Cart from './pages/Cart';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Principal /> } />
           <Route path="/cart" element={ <Cart /> } />
+          <Route path="/products/:id" element={ <ProductDetail /> }/>
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -2,12 +2,11 @@ import React, { useContext } from 'react';
 import globalContext from '../context/globalContext';
 
 export default function ProductDetail() {
-  const { details } = useContext(globalContext);
-  console.log(details);
+  const { details, addToCart } = useContext(globalContext);
   return(
     <div>
       <h3>
-        { details.title } - R${ details.price }
+        { details.title }
       </h3>
       <img
         src={ details.thumbnail }
@@ -36,6 +35,10 @@ export default function ProductDetail() {
           }
         </ul>
       </section>
+      <h3>R${ details.price }</h3>
+      <button
+        onClick={() => addToCart(details)}
+      >Adicionar ao Carrinho</button>
     </div>
   )
 }

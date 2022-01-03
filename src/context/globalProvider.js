@@ -7,16 +7,20 @@ function Provider({ children }) {
   const [category, setCategory] = useState('');
   const [products, setProducts] = useState([]);
   const [details, setDetail] = useState({});
+  const [cart, setCart] = useState([]);
 
   async function handleSearch({ target }) {
    setSearch(target.value);
   }
 
-  // Trabalhar aqui amanhã!
   async function selectCategory({ target }) {
     setCategory(target.id);
     const categoriedProducts = await getProductsByCategory(target);
     setProducts(categoriedProducts);
+  }
+
+  function addToCart(product) {
+    setCart([...cart, product]);
   }
 
   const provideObj = {
@@ -28,6 +32,8 @@ function Provider({ children }) {
     setProducts,
     details,
     setDetail,
+    cart,
+    addToCart,
   };
 
   return (

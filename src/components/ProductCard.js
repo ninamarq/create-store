@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function ProductCard(props) {
   const { list } = props;
   const navigate = useNavigate();
-  const { setDetail } = useContext(globalContext);
+  const { setDetail, addToCart } = useContext(globalContext);
 
   return (
     <div>
@@ -30,7 +30,9 @@ export default function ProductCard(props) {
             >
               Mais detalhes
             </button>
-            <button>Adicionar ao Carrinho</button>
+            <button
+              onClick={() => addToCart(product)}
+            >Adicionar ao Carrinho</button>
           </section>
         ))
       }

@@ -18,7 +18,7 @@ export default function Cart() {
         )
       }
       <h1>Total: { 
-        cart.reduce((previous, product) => previous + product.price, 0).toFixed(2)
+        cart.reduce((previous, product) => previous + ( product.price * product.quantity), 0).toFixed(2)
       }</h1>
       <button
         onClick={() => navigate('/')}

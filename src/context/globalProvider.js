@@ -1,3 +1,4 @@
+import { check } from 'prettier';
 import React, { useState } from 'react';
 import { getProductsByCategory } from '../services/productsAPI';
 import globalContext from './globalContext';
@@ -20,7 +21,20 @@ function Provider({ children }) {
   }
 
   function addToCart(product) {
-    setCart([...cart, product]);
+    const checkingCart = cart.some((element) => element.id === product.id);
+    console.log(checkingCart);
+    if (checkingCart) {
+      const newCart = cart.map((element) => {
+        if (element.id === product.id) {
+          element.quantity += 1;
+        }
+        return element;
+      });
+      setCart(newCart);
+    } else {
+      product.quantity = 1;
+      setCart([...cart, product]);
+    }
   }
 
   const provideObj = {

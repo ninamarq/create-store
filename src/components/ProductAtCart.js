@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function ProductCard(props) {
   const { list } = props;
+  // const { increase, decrease, setIncrease, setDecrease } = props;
   console.log(list);
   return (
     <div>
@@ -19,9 +20,13 @@ export default function ProductCard(props) {
               />
               <p>R${ product.price.toFixed(2) }</p>
               <div>
-                <button>-</button>
+                <button
+                  // onClick={ setIncrease(product) }
+                  >-</button>
                 <h4>{ product.quantity }</h4>
-                <button>+</button>
+                <button
+                  // onClick={ ({ target }) => target.quantity += 1 }
+                >+</button>
               </div>
             </section>
         ))

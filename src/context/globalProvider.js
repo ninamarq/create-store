@@ -9,6 +9,8 @@ function Provider({ children }) {
   const [products, setProducts] = useState([]);
   const [details, setDetail] = useState({});
   const [cart, setCart] = useState([]);
+  const [increase, setIncrease] = useState({});
+  const [decrease, setDecrease] = useState({});
 
   async function handleSearch({ target }) {
    setSearch(target.value);
@@ -22,7 +24,6 @@ function Provider({ children }) {
 
   function addToCart(product) {
     const checkingCart = cart.some((element) => element.id === product.id);
-    console.log(checkingCart);
     if (checkingCart) {
       const newCart = cart.map((element) => {
         if (element.id === product.id) {
@@ -48,6 +49,10 @@ function Provider({ children }) {
     setDetail,
     cart,
     addToCart,
+    increase,
+    setIncrease,
+    decrease,
+    setDecrease,
   };
 
   return (

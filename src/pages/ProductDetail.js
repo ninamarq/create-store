@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
-import globalContext from '../context/globalContext';
 import { useNavigate } from "react-router-dom";
+import globalContext from '../context/globalContext';
+import RedirectToCart from '../components/RedirectToCart';
 
 export default function ProductDetail() {
   const navigate = useNavigate()
   const { details, addToCart } = useContext(globalContext);
   return(
     <div>
+      <RedirectToCart />
       <section>
         <h3>
           { details.title }
@@ -38,7 +40,16 @@ export default function ProductDetail() {
             }
           </ul>
         </section>
-        <h3>R${ details.price.toFixed(2) }</h3>
+        <table>
+          <tr>
+            <th>Estoque</th>
+            <th>Já vendidos</th>
+          </tr>
+          <tr>
+            <td>{ details.available_quantity }</td>
+            <td>{ details.sold_quantity }</td>
+          </tr>
+          </table>
         <button
           onClick={() => addToCart(details)}
         >Adicionar ao Carrinho</button>

@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 import globalContext from '../context/globalContext';
 import ProductCard from '../components/ProductCard';
+import Categories from '../components/Categories';
+import RedirectToCart from '../components/RedirectToCart';
 import { getProductsByQuery, getProductsFromCategoryAndQuery } from '../services/productsAPI';
 
 export default function Principal() {
-  const navigate = useNavigate()
   const { handleSearch, search, category,
     products, setProducts } = useContext(globalContext);
 
@@ -27,10 +27,6 @@ export default function Principal() {
     }
   }
 
-  function redirectCart() {
-    navigate('/cart');
-  }
-
   const verifyProducts = (
     products.length === 0 ?
       (<h4>
@@ -41,6 +37,7 @@ export default function Principal() {
 
   return (
     <div>
+      <Categories />
       <label>
         <input
           type="text"
@@ -54,12 +51,7 @@ export default function Principal() {
           Buscar 🔎
         </button>
       </label>
-      <button
-        type="button"
-        onClick={ redirectCart }
-      >
-        🛒
-      </button>
+      <RedirectToCart />
       {
         category.length === 0 ? verifyProducts
         : (

@@ -44,25 +44,6 @@ Exemplo de como a requisição de categorias é recebida:
 ]
 ```
 
-#### 11. Avalie e comente acerca de um produto em sua tela de exibição detalhada
-
-**PRIORIDADE 3** - Adicionar formulário ao produto, em sua exibição detalhada, para permitir adicionar avaliações com nota de 1 a 5 estrelas e comentários (o comentário deve ser opcional, sendo possível enviar apenas a nota). Exibir a lista de avaliações já feitas. Se quem usa sai e volta da tela, a nota e as avaliações não devem ser apagadas.
-
-- [Tela - Detalhamento do produto com avaliações](https://github.com/tryber/sd-015-b-project-frontend-online-store/tree/master/wireframes/card_11.1.png)
-- [Tela - Detalhamento do produto com avaliações pregressas](https://github.com/tryber/sd-015-b-project-frontend-online-store/tree/master/wireframes/card_11.2.png)
-
-**Observações técnicas**
-
-Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
-
-  * Adicione um campo de texto para que a pessoa que utiliza a aplicação possa escrever algo sobre o produto.
-  * Adicione o atributo `data-testid` com o valor `product-detail-evaluation` no campo de texto.
-
-O que será verificado:
-```
-  - Avalia um produto na sua tela de detalhes
-```
-
 #### 12. Finalize a compra vendo um resumo dela, preenchendo os seus dados e escolhendo a forma de pagamento
 
 **PRIORIDADE 4** - Implementar tela para a finalização da compra. A tela deve conter uma seção para revisão dos produtos com o valor total da compra, um formulário para ter as informações do comprador e um a seção para escolher o método de pagamento. Ao se clicar em "Comprar", deve-se validar que o formulário está preenchido e que a forma de pagamento foi escolhida e, em caso positivo, deve-se zerar o estado, redirecionar para a tela inicial (listagem de produtos). Caso algo não tenha sido preenchido, mantém-se na mesma tela com o dados sem apagar e destaca-se os campos não preenchidos em vermelho.

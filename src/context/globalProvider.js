@@ -1,4 +1,3 @@
-import { check } from 'prettier';
 import React, { useState } from 'react';
 import { getProductsByCategory } from '../services/productsAPI';
 import globalContext from './globalContext';
@@ -9,8 +8,6 @@ function Provider({ children }) {
   const [products, setProducts] = useState([]);
   const [details, setDetail] = useState({});
   const [cart, setCart] = useState([]);
-  const [increase, setIncrease] = useState({});
-  const [decrease, setDecrease] = useState({});
 
   async function handleSearch({ target }) {
    setSearch(target.value);
@@ -38,6 +35,23 @@ function Provider({ children }) {
     }
   }
 
+  function removeFromCart(product) {
+    const checkingCart = cart.some((element) => element.id === product.id);
+    if (checkingCart) {
+      const newCart = cart.map((element) => {
+        if (element.id === product.id) {
+          element.quantity -= 1;
+        }
+        return element;
+      }).filter((element) => element.quantity > 0);
+      setCart(newCart);
+    }
+  }
+
+  function deleteFromCart(product) {
+    setCart(cart.filter((element) => element.id !== product.id));
+  }
+
   const provideObj = {
     search,
     handleSearch,
@@ -49,10 +63,8 @@ function Provider({ children }) {
     setDetail,
     cart,
     addToCart,
-    increase,
-    setIncrease,
-    decrease,
-    setDecrease,
+    removeFromCart,
+    deleteFromCart,
   };
 
   return (

@@ -38,7 +38,7 @@ export default function ProductDetail() {
             }
           </ul>
         </section>
-        <h3>R${ details.price }</h3>
+        <h3>R${ details.price.toFixed(2) }</h3>
         <button
           onClick={() => addToCart(details)}
         >Adicionar ao Carrinho</button>

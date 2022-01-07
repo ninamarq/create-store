@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import globalContext from '../context/globalContext';
 
 export default function ProductCard(props) {
   const { list } = props;
-  // const { increase, decrease, setIncrease, setDecrease } = props;
-  console.log(list);
+  const { addToCart, removeFromCart, deleteFromCart } = useContext(globalContext);
+
   return (
     <div>
       {
@@ -21,12 +22,15 @@ export default function ProductCard(props) {
               <p>R${ product.price.toFixed(2) }</p>
               <div>
                 <button
-                  // onClick={ setIncrease(product) }
+                  onClick={ () => removeFromCart(product) }
                   >-</button>
                 <h4>{ product.quantity }</h4>
                 <button
-                  // onClick={ ({ target }) => target.quantity += 1 }
+                  onClick={ () => addToCart(product) }
                 >+</button>
+                <button
+                  onClick={ () => deleteFromCart(product) }
+                >X</button>
               </div>
             </section>
         ))

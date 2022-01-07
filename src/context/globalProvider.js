@@ -20,7 +20,36 @@ function Provider({ children }) {
   }
 
   function addToCart(product) {
-    setCart([...cart, product]);
+    const checkingCart = cart.some((element) => element.id === product.id);
+    if (checkingCart) {
+      const newCart = cart.map((element) => {
+        if (element.id === product.id) {
+          element.quantity += 1;
+        }
+        return element;
+      });
+      setCart(newCart);
+    } else {
+      product.quantity = 1;
+      setCart([...cart, product]);
+    }
+  }
+
+  function removeFromCart(product) {
+    const checkingCart = cart.some((element) => element.id === product.id);
+    if (checkingCart) {
+      const newCart = cart.map((element) => {
+        if (element.id === product.id) {
+          element.quantity -= 1;
+        }
+        return element;
+      }).filter((element) => element.quantity > 0);
+      setCart(newCart);
+    }
+  }
+
+  function deleteFromCart(product) {
+    setCart(cart.filter((element) => element.id !== product.id));
   }
 
   const provideObj = {
@@ -34,6 +63,8 @@ function Provider({ children }) {
     setDetail,
     cart,
     addToCart,
+    removeFromCart,
+    deleteFromCart,
   };
 
   return (

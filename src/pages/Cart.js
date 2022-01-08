@@ -23,6 +23,9 @@ export default function Cart() {
       <button
         onClick={() => navigate('/')}
       >Voltar</button>
+      <button
+        onClick={() => navigate('/finish-shop/payment')}
+      >Continuar Compra</button>
     </div>
   )
 }

@@ -1,0 +1,15 @@
+.teste {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 10px;
+    border: solid rgb(252, 185, 60) 1px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}

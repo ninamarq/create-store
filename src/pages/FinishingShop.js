@@ -40,7 +40,9 @@ export default function FinishingShop() {
         <h3>Revise seus Produtos</h3>
           {
             cart.map((product) => (
-              <section>
+              <section
+                className="card"
+              >
                 <img
                 width="100px"
                   src={ product.thumbnail }

@@ -6,11 +6,14 @@ export default function ProductCard(props) {
   const { addToCart, removeFromCart, deleteFromCart } = useContext(globalContext);
 
   return (
-    <div>
+    <div
+      className='teste'
+    >
       {
         list.length === 0 ? <h4>Nenhum produto foi adicionado!</h4>
         : list.map((product) => (
             <section
+            className='card'
               key={ product.id }
             >
               <h4>{ product.title }</h4>

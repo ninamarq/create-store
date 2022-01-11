@@ -5,7 +5,7 @@ export default function ConfirmingData() {
   const { buyerData, cart } = useContext(globalContext);
   return(
     <section>
-      <h3>Confirme seus dados:</h3>
+      <h3>Confirme seus dados</h3>
       <h4>Nome: { buyerData.name }</h4>
       <h4>CPF: { buyerData.cpf }</h4>
       <h4>Endereço: { buyerData.address }</h4>

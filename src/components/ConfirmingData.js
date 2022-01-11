@@ -42,6 +42,13 @@ export default function ConfirmingData() {
           </>
         )
       }
+      <h3>
+        Total: R$
+        { ' ' }
+        {
+          cart.reduce((previous, product) => previous + ( product.price * product.quantity), 0).toFixed(2)
+        }
+      </h3>
     </section>
   );
 }

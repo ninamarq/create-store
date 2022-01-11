@@ -169,6 +169,31 @@ export default function BuyerData() {
             id="elo"
             onChange={handleChange} />
         </label>
-      </section></>
+      </section>
+      {
+        buyerData.payment !== "Boleto" && (
+          <section>
+            <input
+              type="text"
+              placeholder="Número do Cartão"
+              name="numberCard"
+              onChange={handleChange}
+            />
+            <input
+              type="date"
+              placeholder="Validade Cartão"
+              name="validate"
+              onChange={handleChange}
+            />
+            <input
+              type="number"
+              name="securityCode"
+              onChange={handleChange}
+              placeholder="Código de Segurança"
+            />
+          </section>
+        )
+      }
+      </>
   );
 }

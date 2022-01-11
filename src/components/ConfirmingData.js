@@ -33,6 +33,15 @@ export default function ConfirmingData() {
             </section>
         ))
       }
+      {
+        buyerData.payment !== "Boleto" && (
+          <>
+            <h3>Dados do Cartão</h3>
+            <h4>Número do Cartao: { buyerData.numberCard }</h4>
+            <h4>Validade: { buyerData.validate }</h4>
+          </>
+        )
+      }
     </section>
   );
 }

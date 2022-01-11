@@ -19,7 +19,10 @@ function Provider({ children }) {
     number: 0,
     city: '',
     state: 'MG',
-    payment: '',
+    payment: 'Boleto',
+    numberCard: 0,
+    validate: '',
+    securityCode: 0,
   });
 
   async function handleSearch({ target }) {

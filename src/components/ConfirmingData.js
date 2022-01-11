@@ -17,6 +17,22 @@ export default function ConfirmingData() {
       <h4>Cidade: { buyerData.city }</h4>
       <h4>Estado: { buyerData.state }</h4>
       <h4>Método de Pagamento: { buyerData.payment }</h4>
+      {
+        cart.map((product) => (
+          <section
+              className="card"
+            >
+              <img
+              width="100px"
+                src={ product.thumbnail }
+                alt={ product.title }
+              />
+              <h4>{ product.title }</h4>
+              <h4>Qtde: { product.quantity }</h4>
+              <h4>R${ product.price }</h4>
+            </section>
+        ))
+      }
     </section>
-  )
+  );
 }

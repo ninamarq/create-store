@@ -133,7 +133,7 @@ export default function BuyerData() {
             type="radio"
             name="payment"
             id="boleto"
-            value="boleto"
+            value="Boleto"
             onChange={handleChange} />
         </label>
         <p>Cartão de Crédito</p>
@@ -145,7 +145,7 @@ export default function BuyerData() {
             type="radio"
             name="payment"
             id="visa"
-            value="visa"
+            value="Visa"
             onChange={handleChange} />
         </label>
         <label
@@ -156,7 +156,7 @@ export default function BuyerData() {
             type="radio"
             name="payment"
             id="mastercard"
-            value="mastercard"
+            value="Mastercard"
             onChange={handleChange} />
         </label><label
           htmlFor="elo"
@@ -165,7 +165,7 @@ export default function BuyerData() {
           <input
             type="radio"
             name="payment"
-            value="elo"
+            value="Elo"
             id="elo"
             onChange={handleChange} />
         </label>

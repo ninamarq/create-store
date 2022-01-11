@@ -8,6 +8,19 @@ function Provider({ children }) {
   const [products, setProducts] = useState([]);
   const [details, setDetail] = useState({});
   const [cart, setCart] = useState([]);
+  const [buyerData, setData] = useState({
+    name: '',
+    cpf: 0,
+    email: '',
+    tel: 0,
+    cep: 0,
+    address: '',
+    comp: 0,
+    number: 0,
+    city: '',
+    state: 'MG',
+    payment: '',
+  });
 
   async function handleSearch({ target }) {
    setSearch(target.value);
@@ -65,6 +78,8 @@ function Provider({ children }) {
     addToCart,
     removeFromCart,
     deleteFromCart,
+    setData,
+    buyerData,
   };
 
   return (

@@ -17,7 +17,9 @@ export default function Cart() {
           <ProductAtCard list={ cart }/>
         )
       }
-      <h1>Total: { 
+      <h1>Total: R$
+      { ' ' }
+      { 
         cart.reduce((previous, product) => previous + ( product.price * product.quantity), 0).toFixed(2)
       }</h1>
       <button

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import globalContext from '../context/globalContext';
 
 export default function ConfirmingData() {
-  const { buyerData, cart } = useContext(globalContext);
+  const { buyerData, cart, setFinished } = useContext(globalContext);
   return(
     <section>
       <h3>Confirme seus dados</h3>
@@ -49,6 +49,9 @@ export default function ConfirmingData() {
           cart.reduce((previous, product) => previous + ( product.price * product.quantity), 0).toFixed(2)
         }
       </h3>
+      <button
+        onClick={ () => setFinished(true) }
+      >Finalizar Compra</button>
     </section>
   );
 }

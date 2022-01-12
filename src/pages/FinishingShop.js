@@ -1,23 +1,33 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import globalContext from '../context/globalContext';
 import BuyerData from '../components/BuyerData';
 import ConfirmingData from '../components/ConfirmingData';
+import swal from 'sweetalert';
 
 export default function FinishingShop() {
   const navigate = useNavigate();
-  const [isConfirming, setConfirm] = useState(false);
+  const { confirmShop, finishShop, setConfirm, setFinished, setCart } = useContext(globalContext);
+  const validateShopStatus = (confirmShop && finishShop);
+
+  function thanksForBuying() {
+    swal('Compra efetuada com sucesso!', 'Muito obrigada pela preferência.', 'success');
+    navigate('/');
+    setConfirm(false);
+    setFinished(false);
+  }
 
   return (
     <div>
       {
-        isConfirming ? <ConfirmingData /> : <BuyerData />
+        confirmShop ? <ConfirmingData /> : <BuyerData />
+      }
+      {
+        validateShopStatus && thanksForBuying()
       }
       <button
         onClick={() => navigate('/cart')}
       >Voltar</button>
-      <button
-        onClick={ () => setConfirm(true) }
-      >{ isConfirming ? "Finalizar Compra" : "Confirmar Compra" }</button>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import globalContext from '../context/globalContext';
 
 export default function BuyerData() {
-  const { buyerData, setData, cart } = useContext(globalContext);
+  const { buyerData, setData, cart, setConfirm } = useContext(globalContext);
   const brStates =  [
     'AC',
     'AL',
@@ -194,6 +194,9 @@ export default function BuyerData() {
           </section>
         )
       }
+      <button
+        onClick={ () => setConfirm(true) }
+      >Confirmar Compra</button>
       </>
   );
 }

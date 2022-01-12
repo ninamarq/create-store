@@ -24,6 +24,9 @@ function Provider({ children }) {
     validate: '',
     securityCode: 0,
   });
+  const [confirmShop, setConfirm] = useState(false);
+  const [finishShop, setFinished] = useState(false);
+
 
   async function handleSearch({ target }) {
    setSearch(target.value);
@@ -83,6 +86,10 @@ function Provider({ children }) {
     deleteFromCart,
     setData,
     buyerData,
+    confirmShop,
+    setConfirm,
+    finishShop,
+    setFinished,
   };
 
   return (

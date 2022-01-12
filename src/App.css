@@ -13,3 +13,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.swal-button {
+    background-color: rgba(252, 185, 60, 0.877);
+}
+
+.swal-button:hover {
+    background-color: rgb(252, 185, 60);
+}

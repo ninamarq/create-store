@@ -1,8 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   return (
-    <header>createStore()</header>
+    <header>
+      <h2
+        onClick={ () => navigate('/') }
+      >createStore()</h2>
+    </header>
   )
 }
 

@@ -22,7 +22,7 @@ export default function Principal() {
       setProducts(productsResult);
     }
     if (category.length > 0) {
-      const productsQueryCat = await getProductsFromCategoryAndQuery(category, search);
+      const productsQueryCat = await getProductsFromCategoryAndQuery({ id: category }, search);
       setProducts(productsQueryCat);
     }
   }

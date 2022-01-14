@@ -1,12 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import globalContext from '../context/globalContext';
 import ProductCard from '../components/ProductCard';
-import Categories from '../components/Categories';
-import RedirectToCart from '../components/RedirectToCart';
-import { getProductsByQuery, getProductsFromCategoryAndQuery } from '../services/productsAPI';
+import { getProductsByQuery } from '../services/productsAPI';
 
 export default function Principal() {
-  const { handleSearch, search, category,
+  const { search, category,
     products, setProducts } = useContext(globalContext);
 
   useEffect(async () => {
@@ -15,17 +13,6 @@ export default function Principal() {
       setProducts(initial_products);
     }
   }, []);
-
-  async function handleClickSearch() {
-    if (category.length === 0) {
-      const productsResult = await getProductsByQuery(search);
-      setProducts(productsResult);
-    }
-    if (category.length > 0) {
-      const productsQueryCat = await getProductsFromCategoryAndQuery({ id: category }, search);
-      setProducts(productsQueryCat);
-    }
-  }
 
   const verifyProducts = (
     products.length === 0 ?
@@ -37,21 +24,6 @@ export default function Principal() {
 
   return (
     <div>
-      <Categories />
-      <label>
-        <input
-          type="text"
-          onChange={ handleSearch }
-          placeholder="Digite o produto"
-        />
-        <button
-          type="button"
-          onClick={ handleClickSearch }
-        >
-          Buscar 🔎
-        </button>
-      </label>
-      <RedirectToCart />
       {
         category.length === 0 ? verifyProducts
         : (

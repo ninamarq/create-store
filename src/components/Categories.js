@@ -13,23 +13,21 @@ export default function Categories() {
   const { selectCategory } = useContext(globalContext);
 
   return (
-    <aside>
+    <select
+      onChange={ selectCategory }
+    >
+      <option>Categorias</option>
       {
         categories.map((element) => (
-          <label
+          <option
+            category={ element }
             key={ element.id }
-            htmlFor={ element.id }
+            value={ element.id }
           >
             { element.name }
-            <input
-              id={ element.id }
-              type="radio"
-              name="category"
-              onClick={ selectCategory }
-            />
-          </label>
+          </option>
         ))
       }
-    </aside>
+    </select>
   );
 };

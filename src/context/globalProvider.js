@@ -33,8 +33,8 @@ function Provider({ children }) {
   }
 
   async function selectCategory({ target }) {
-    setCategory(target.id);
-    const categoriedProducts = await getProductsByCategory(target);
+    setCategory(target.value);
+    const categoriedProducts = await getProductsByCategory(target.value);
     setProducts(categoriedProducts);
   }
 

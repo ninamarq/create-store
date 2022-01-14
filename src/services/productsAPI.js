@@ -25,7 +25,7 @@ export function getProductsByQuery(query) {
   );
 }
 
-export function getProductsByCategory({ id }) {
+export function getProductsByCategory(id) {
   const URL = `https://api.mercadolibre.com/sites/MLB/search?category=${id}`;
   return (
     fetch(URL)

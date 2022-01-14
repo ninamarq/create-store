@@ -7,7 +7,11 @@ import swal from 'sweetalert';
 
 export default function FinishingShop() {
   const navigate = useNavigate();
-  const { confirmShop, finishShop, setConfirm, setFinished, setCart } = useContext(globalContext);
+  const { confirmShop,
+    finishShop,
+    setConfirm,
+    setFinished,
+  } = useContext(globalContext);
   const validateShopStatus = (confirmShop && finishShop);
 
   function thanksForBuying() {

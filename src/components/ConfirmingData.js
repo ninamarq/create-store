@@ -8,7 +8,8 @@ export default function ConfirmingData() {
       <h3>Confirme seus dados</h3>
       <h4>Nome: { buyerData.name }</h4>
       <h4>CPF: { buyerData.cpf }</h4>
-      <h4>Endereço: { buyerData.address }</h4>
+      <h4>Rua: { buyerData.street }</h4>
+      <h4>Bairro: { buyerData.neighborhood }</h4>
       {
         buyerData.comp.length > 0 && (
           <h4>Complemento: { buyerData.comp }</h4>)

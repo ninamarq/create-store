@@ -1,5 +1,7 @@
+import { check } from "prettier";
 import React, { useContext } from "react";
 import globalContext from '../context/globalContext';
+import { getAdressByZipCode } from '../services/productsAPI';
 
 export default function BuyerData() {
   const { buyerData, setData, cart, setConfirm } = useContext(globalContext);
@@ -36,6 +38,20 @@ export default function BuyerData() {
     function handleChange({ target }) {
       setData({...buyerData,
         [target.name]: target.value});
+    }
+
+    async function handleCEP({ target }) {
+      if (target.value.length === 8) {
+        console.log("check")
+        const getAdress = await getAdressByZipCode(target.value);
+        return setData({...buyerData,
+          [target.name]: target.value,
+          street: getAdress.street,
+          neighborhood: getAdress.neighborhood,
+          city: getAdress.city,
+          state: getAdress.state,
+        });
+      }
     }
 
   return(
@@ -91,11 +107,18 @@ export default function BuyerData() {
           type="number"
           placeholder="CEP"
           name="cep"
-          onChange={handleChange} />
+          onChange={handleCEP} />
         <input
           type="text"
-          name="address"
-          placeholder="Endereço"
+          name="street"
+          placeholder="Rua"
+          value={ buyerData.street }
+          onChange={handleChange} />
+          <input
+          type="text"
+          name="neighborhood"
+          placeholder="Bairro"
+          value={ buyerData.neighborhood }
           onChange={handleChange} />
         <input
           type="text"
@@ -111,10 +134,12 @@ export default function BuyerData() {
           type="text"
           placeholder="Cidade"
           name="city"
+          value={ buyerData.city }
           onChange={handleChange} />
         <select
           name="state"
           onChange={handleChange}
+          value={ buyerData.state }
         >
           {brStates.map((state) => (
             <option

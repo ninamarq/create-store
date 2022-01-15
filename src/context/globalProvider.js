@@ -72,6 +72,10 @@ function Provider({ children }) {
     setCart(cart.filter((element) => element.id !== product.id));
   }
 
+  function clearCart() {
+    setCart(cart.filter((element) => element.title === 'clear cart'))
+  }
+
   const provideObj = {
     search,
     handleSearch,
@@ -91,6 +95,7 @@ function Provider({ children }) {
     setConfirm,
     finishShop,
     setFinished,
+    clearCart,
   };
 
   return (

@@ -115,6 +115,7 @@ export default function BuyerData() {
           value={ buyerData.street }
           onChange={handleChange} />
           <input
+
           type="text"
           name="neighborhood"
           placeholder="Bairro"
@@ -122,7 +123,7 @@ export default function BuyerData() {
           onChange={handleChange} />
         <input
           type="text"
-          placeholder="Complemento"
+          placeholder="Complemento *"
           name="comp"
           onChange={handleChange} />
         <input

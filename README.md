@@ -47,7 +47,10 @@ Exemplo de como a requisição de categorias é recebida:
 ## API da pagar.me Zip Code
 Para checar e receber os dados de seu endereço através do CEP inserido, foi utilizado o seguinte endpoint.
 
-https://api.pagar.me/1/zipcodes/${CEP}
+- Para listar o endereço disponível:
+  - Tipo da requisição: `GET`
+  - Parâmetro: $CEP (este parâmetro é substituído pelo valor do input do CEP)
+Endpoint: https://api.pagar.me/1/zipcodes/$CEP
 
 Exemplo de como a requisição de categorias é recebida, como exemplo foi utilizado o CEP da Trybe:
 

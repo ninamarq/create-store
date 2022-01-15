@@ -5,12 +5,35 @@ import { getProductsByQuery } from '../services/productsAPI';
 
 export default function Principal() {
   const { search, category,
-    products, setProducts } = useContext(globalContext);
+    products, setProducts,
+    finishShop, setFinished, clearCart,
+    setData } = useContext(globalContext);
 
   useEffect(async () => {
     if (category.length === 0 && search.length === 0) {
       const initial_products = await getProductsByQuery("gamer");
       setProducts(initial_products);
+    }
+    if (finishShop) {
+      setFinished(false);
+      setData({
+        name: '',
+        cpf: 0,
+        email: '',
+        tel: 0,
+        cep: 0,
+        street: '',
+        neighborhood: '',
+        comp: 0,
+        number: 0,
+        city: '',
+        state: 'AC',
+        payment: 'Boleto',
+        numberCard: 0,
+        validate: '',
+        securityCode: 0,
+      });
+      clearCart()
     }
   }, []);
 

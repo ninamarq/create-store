@@ -7,7 +7,7 @@ export default function Principal() {
   const { search, category,
     products, setProducts,
     finishShop, setFinished, clearCart,
-    setData } = useContext(globalContext);
+    setData, setSearch, setCategory } = useContext(globalContext);
 
   useEffect(async () => {
     if (category.length === 0 && search.length === 0) {
@@ -33,7 +33,7 @@ export default function Principal() {
         validate: '',
         securityCode: 0,
       });
-      clearCart()
+      clearCart();
     }
   }, []);
 

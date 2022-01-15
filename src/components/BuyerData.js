@@ -1,5 +1,5 @@
 import { check } from "prettier";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import globalContext from '../context/globalContext';
 import { getAdressByZipCode } from '../services/productsAPI';
 
@@ -34,6 +34,18 @@ export default function BuyerData() {
     'SE',
     'TO',
     ];
+
+
+  function dataValidation() {
+    const keys = Object.keys(buyerData);
+    let isDisabled = true;
+    keys.some((key) => {
+      if(buyerData[key] === '' || buyerData[key] === 0) {
+        isDisabled = false;
+      }
+    });
+    return isDisabled;
+  }
 
     function handleChange({ target }) {
       setData({...buyerData,
@@ -222,6 +234,7 @@ export default function BuyerData() {
       }
       <button
         onClick={ () => setConfirm(true) }
+        disabled={ dataValidation }
       >Confirmar Compra</button>
       </>
   );

@@ -74,6 +74,8 @@ function Provider({ children }) {
 
   function clearCart() {
     setCart(cart.filter((element) => element.title === 'clear cart'))
+    setCategory('');
+    setSearch('');
   }
 
   const provideObj = {

@@ -6,7 +6,7 @@ Site / App de compras :shopping: para trabalhar conhecimentos de React Hooks, ut
 ---
 
 ## Documentação da API do Mercado Livre
-Sua página web irá consumir os dados da API do Mercado Livre para realizar a busca de itens da sua loja online. Para realizar essas buscas, vocês precisarão consultar os seguintes endpoints:
+Para realizar buscas de produtos para renderização, vocês foi consultado os seguintes endpoints:
 
 - Para listar as categorias disponíveis:
   - Tipo da requisição: `GET`
@@ -42,6 +42,23 @@ Exemplo de como a requisição de categorias é recebida:
       "name": "Alimentos e Bebidas"
   }
 ]
+```
+
+## API da pagar.me Zip Code
+Para checar e receber os dados de seu endereço através do CEP inserido, foi utilizado o seguinte endpoint.
+
+https://api.pagar.me/1/zipcodes/${CEP}
+
+Exemplo de como a requisição de categorias é recebida, como exemplo foi utilizado o CEP da Trybe:
+
+```json
+{
+  "zipcode": "30180910",
+  "street": "Rua dos Guajajaras 40 - Edifício Mirafiori",
+  "neighborhood": "Centro",
+  "city": "Belo Horizonte",
+  "state": "MG"
+}
 ```
 
 #### 12. Finalize a compra vendo um resumo dela, preenchendo os seus dados e escolhendo a forma de pagamento

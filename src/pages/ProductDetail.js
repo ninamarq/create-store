@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import globalContext from '../context/globalContext';
-import RedirectToCart from '../components/RedirectToCart';
 
 export default function ProductDetail() {
   const navigate = useNavigate()
   const { details, addToCart } = useContext(globalContext);
   return(
     <div>
-      <RedirectToCart />
       <section>
         <h3>
           { details.title }

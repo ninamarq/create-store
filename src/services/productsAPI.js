@@ -33,3 +33,12 @@ export function getProductsByCategory(id) {
       .then((data) => data.results)
   );
 }
+
+export function getAdressByZipCode(zip) {
+  const URL = `https://api.pagar.me/1/zipcodes/${zip}`;
+  return (
+    fetch(URL)
+    .then((response) => response.json())
+    .then((data) => data)
+  );
+}

@@ -3,6 +3,7 @@ import globalContext from '../context/globalContext';
 
 export default function ConfirmingData() {
   const { buyerData, cart, setFinished } = useContext(globalContext);
+  const checkingPayment = (buyerData.payment !== "Boleto" && buyerData.payment !== "");
   return(
     <section>
       <h3>Confirme seus dados</h3>
@@ -35,7 +36,7 @@ export default function ConfirmingData() {
         ))
       }
       {
-        buyerData.payment !== "Boleto" && (
+        checkingPayment && (
           <>
             <h3>Dados do Cartão</h3>
             <h4>Número do Cartao: { buyerData.numberCard }</h4>

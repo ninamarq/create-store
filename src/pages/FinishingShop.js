@@ -10,7 +10,6 @@ export default function FinishingShop() {
   const { confirmShop,
     finishShop,
     setConfirm,
-    setFinished,
   } = useContext(globalContext);
   const validateShopStatus = (confirmShop && finishShop);
 
@@ -18,7 +17,6 @@ export default function FinishingShop() {
     swal('Compra efetuada com sucesso!', 'Muito obrigada pela preferência.', 'success');
     navigate('/');
     setConfirm(false);
-    setFinished(false);
   }
 
   return (

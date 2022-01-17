@@ -19,8 +19,8 @@ function Provider({ children }) {
     comp: 0,
     number: 0,
     city: '',
-    state: 'AC',
-    payment: 'Boleto',
+    state: '',
+    payment: '',
     numberCard: 0,
     validate: '',
     securityCode: 0,
@@ -72,6 +72,12 @@ function Provider({ children }) {
     setCart(cart.filter((element) => element.id !== product.id));
   }
 
+  function clearCart() {
+    setCart(cart.filter((element) => element.title === 'clear cart'))
+    setCategory('');
+    setSearch('');
+  }
+
   const provideObj = {
     search,
     handleSearch,
@@ -91,6 +97,7 @@ function Provider({ children }) {
     setConfirm,
     finishShop,
     setFinished,
+    clearCart,
   };
 
   return (

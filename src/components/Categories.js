@@ -13,21 +13,25 @@ export default function Categories() {
   const { selectCategory } = useContext(globalContext);
 
   return (
-    <select
-      onChange={ selectCategory }
+    <div
+      className='categories'
     >
-      <option>Categorias</option>
-      {
-        categories.map((element) => (
-          <option
-            category={ element }
-            key={ element.id }
-            value={ element.id }
-          >
-            { element.name }
-          </option>
-        ))
-      }
-    </select>
+      <select
+        onChange={ selectCategory }
+      >
+        <option>Categorias</option>
+        {
+          categories.map((element) => (
+            <option
+              category={ element }
+              key={ element.id }
+              value={ element.id }
+            >
+              { element.name }
+            </option>
+          ))
+        }
+      </select>
+    </div>
   );
 };

@@ -9,11 +9,15 @@ function Header() {
   const navigate = useNavigate();
   return (
     <header>
-      <h2
+      <section
+        id="title-logo"
         onClick={ () => navigate('/') }
-      >createStore()</h2>
-      <Categories />
+      >
+        <h2
+        >createStore( )</h2>
+      </section>
       <Search />
+      <Categories />
       <RedirectToCart />
     </header>
   )

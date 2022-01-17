@@ -8,9 +8,7 @@ export default function ProductCard(props) {
   const { setDetail, addToCart } = useContext(globalContext);
 
   return (
-    <div
-      className='teste'
-    >
+    <div>
       {
         list.length === 0 ? <h4>Nenhum produto foi encontrado</h4>
         : list.map((product) => (

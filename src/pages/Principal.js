@@ -2,12 +2,13 @@ import React, { useContext, useEffect } from 'react';
 import globalContext from '../context/globalContext';
 import ProductCard from '../components/ProductCard';
 import { getProductsByQuery } from '../services/productsAPI';
+import notFound from '../images/notFound.svg';
 
 export default function Principal() {
   const { search, category,
     products, setProducts,
     finishShop, setFinished, clearCart,
-    setData, setCategory } = useContext(globalContext);
+    setData } = useContext(globalContext);
 
   useEffect(async () => {
     if (category.length === 0 && search.length === 0) {
@@ -41,9 +42,13 @@ export default function Principal() {
 
   const verifyProducts = (
     products.length === 0 ?
-      (<h4>
-        Nenhum produto foi encontrado!
-      </h4>)
+      (
+      <section>
+        <h4>
+          Nenhum produto foi encontrado!
+        </h4>
+      </section>
+      )
       : <ProductCard list={ products }/>
   );
 

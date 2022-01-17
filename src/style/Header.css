@@ -1,0 +1,97 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #FFF;
+  font-family: 'Kanit', sans-serif;
+  background-color: #3EB68A;
+  height: 60px;
+}
+
+select {
+  font-size: medium;
+  font-family: 'Kanit', sans-serif;
+  padding: 10px;
+  color: #FFF;
+  background-color: #3EB68A;
+  border: 0;
+  text-align: center;
+}
+
+select:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.767);
+  transition: 0.5s;
+}
+
+select ::-webkit-scrollbar {
+  background-color: #3EB68A;
+}
+
+select ::-webkit-scrollbar-thumb {
+  background-color: #FFF;
+}
+
+#title-logo {
+  font-size: small;
+}
+
+#title-logo:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  color: rgba(255, 255, 255, 0.753);
+}
+
+.search-bar {
+  display: inline-flex;
+  width: 100%;
+  max-width: 500px;
+  font-family: 'Kanit', sans-serif;
+  padding: 2%;
+  font-size: 17px;
+  border: 10;
+}
+
+.searchbar-input {
+  flex-grow: 1;
+  padding: 10px;
+  outline: none;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  background: #FFF;
+  transition: background-color 0.25, box-shadow 0.25s;
+}
+
+.searchbar-input:focus {
+  background-color: #FFF;
+  box-shadow: 0 0 2px #dfdfdfe3;
+}
+
+.searchbar-input::placeholder {
+  color: #bbbbbb;
+}
+
+#searchbar-button {
+  width: 40px;
+  background-color: #FFF;
+  color: #FFF;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.to-cart {
+  background-color: #3EB68A;
+  border: 0;
+  padding: 10px;
+  color: #FFF;
+}
+
+.to-cart:hover {
+  cursor: pointer;
+}

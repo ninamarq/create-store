@@ -18,18 +18,24 @@ export default function Search() {
   }
 
   return(
-      <label>
+    <div
+    className='search-bar'
+    >
       <input
+        className='searchbar-input'
         type="text"
         onChange={ handleSearch }
         placeholder="Digite o produto"
       />
-      <button
-        type="button"
-        onClick={ handleClickSearch }
-      >
-        Buscar 🔎
-      </button>
-    </label>
+      <buttton
+      type="submit"
+      id="searchbar-button"
+      onClick={ handleClickSearch }>
+        <img
+          src="https://img.icons8.com/ios/50/000000/search--v4.png"
+          width="30px"
+        />
+      </buttton>
+    </div>
   );
 }

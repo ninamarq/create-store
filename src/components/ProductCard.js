@@ -15,27 +15,33 @@ export default function ProductCard(props) {
         list.length === 0 ? <h4>Nenhum produto foi encontrado</h4>
         : list.map((product) => (
           <section
-            className='card'
+            onClick={() => {
+              setDetail(product);
+              navigate(`products/${ product.id }`)
+            }}
+            className='product-card'
             key={ product.id }
           >
-            <h4>{ product.title }</h4>
             <img
+              className='product-img'
               src={ product.thumbnail }
               alt={ product.title }
               width="200px"
-            />
-            <p>R${ product.price.toFixed(2) }</p>
-            <button
-              onClick={() => {
-                setDetail(product);
-                navigate(`products/${ product.id }`)
-              }}
+              />
+            <h3>R$ { product.price.toFixed(2) }</h3>
+            <p>{ product.title }</p>
+            <h4
+              className='free-shipping'
+            >{
+              product.shipping.free_shipping && ('Frete Grátis')  
+            }</h4>
+            <div
+              className='product-buttons'
             >
-              Mais detalhes
-            </button>
-            <button
-              onClick={() => addToCart(product)}
-            >Adicionar ao Carrinho</button>
+              <button
+                onClick={() => addToCart(product)}
+              >Adicionar ao Carrinho</button>
+            </div>
           </section>
         ))
       }

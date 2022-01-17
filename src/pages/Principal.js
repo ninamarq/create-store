@@ -7,11 +7,11 @@ export default function Principal() {
   const { search, category,
     products, setProducts,
     finishShop, setFinished, clearCart,
-    setData, setSearch, setCategory } = useContext(globalContext);
+    setData, setCategory } = useContext(globalContext);
 
   useEffect(async () => {
     if (category.length === 0 && search.length === 0) {
-      const initial_products = await getProductsByQuery("gamer");
+      const initial_products = await getProductsByQuery("programação");
       setProducts(initial_products);
     }
     if (finishShop) {
@@ -34,6 +34,8 @@ export default function Principal() {
         securityCode: 0,
       });
       clearCart();
+      const initial_products = await getProductsByQuery("programação");
+      setProducts(initial_products);
     }
   }, []);
 

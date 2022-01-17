@@ -1,11 +1,12 @@
-import { check } from "prettier";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import globalContext from '../context/globalContext';
 import { getAdressByZipCode } from '../services/productsAPI';
+import swal from 'sweetalert';
 
 export default function BuyerData() {
   const { buyerData, setData, cart, setConfirm } = useContext(globalContext);
   const brStates =  [
+    'Estado',
     'AC',
     'AL',
     'AP',
@@ -35,16 +36,27 @@ export default function BuyerData() {
     'TO',
     ];
 
-
+// Verifica se o formulário está preenchido
   function dataValidation() {
-    const keys = Object.keys(buyerData);
-    let isDisabled = true;
-    keys.some((key) => {
-      if(buyerData[key] === '' || buyerData[key] === 0) {
-        isDisabled = false;
-      }
-    });
-    return isDisabled;
+    const userKeys = Object.keys(buyerData);
+    const check = buyerData.payment === "Boleto" ? (
+      userKeys.some((key) => {
+        if(key !== "numberCard" && key !== "validate"
+          && key !== "securityCode" && key !== "comp" ) {
+          return (buyerData[key].length === 0 || buyerData[key] === 0);
+        }
+      })
+    ) : (
+      userKeys.some((key) => (key !== "comp") && (
+        buyerData[key].length === 0 || buyerData[key] === 0
+        )
+      )
+    )
+    check ? (
+      swal('Preencha todos os campos!', 'Ei, dê uma olhada nos seus dados, está tudo preenchido?', 'error')
+    ) : (
+      setConfirm(true)
+    )
   }
 
     function handleChange({ target }) {
@@ -54,7 +66,6 @@ export default function BuyerData() {
 
     async function handleCEP({ target }) {
       if (target.value.length === 8) {
-        console.log("check")
         const getAdress = await getAdressByZipCode(target.value);
         return setData({...buyerData,
           [target.name]: target.value,
@@ -66,6 +77,32 @@ export default function BuyerData() {
       }
     }
 
+  function checkingPayment() {
+    if(buyerData.payment !== "Boleto" && buyerData.payment !== '') {
+      return (
+        <section>
+        <input
+          type="text"
+          placeholder="Número do Cartão"
+          name="numberCard"
+          onChange={handleChange}
+        />
+        <input
+          type="date"
+          placeholder="Validade Cartão"
+          name="validate"
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="securityCode"
+          onChange={handleChange}
+          placeholder="Código de Segurança"
+        />
+      </section>)
+    }
+  }
+
   return(
     <>
     <section>
@@ -73,6 +110,7 @@ export default function BuyerData() {
         {
           cart.map((product) => (
             <section
+              key={ product.title }
               className="card"
             >
               <img
@@ -104,6 +142,7 @@ export default function BuyerData() {
           type="number"
           placeholder="CPF"
           name="cpf"
+          maxLength="11"
           onChange={handleChange} />
         <input
           type="email"
@@ -209,32 +248,11 @@ export default function BuyerData() {
         </label>
       </section>
       {
-        buyerData.payment !== "Boleto" && (
-          <section>
-            <input
-              type="text"
-              placeholder="Número do Cartão"
-              name="numberCard"
-              onChange={handleChange}
-            />
-            <input
-              type="date"
-              placeholder="Validade Cartão"
-              name="validate"
-              onChange={handleChange}
-            />
-            <input
-              type="number"
-              name="securityCode"
-              onChange={handleChange}
-              placeholder="Código de Segurança"
-            />
-          </section>
-        )
+        checkingPayment()
       }
       <button
-        onClick={ () => setConfirm(true) }
-        disabled={ dataValidation }
+        type="button"
+        onClick={ () => dataValidation() }
       >Confirmar Compra</button>
       </>
   );

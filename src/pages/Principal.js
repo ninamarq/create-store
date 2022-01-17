@@ -47,6 +47,11 @@ export default function Principal() {
         <h4>
           Nenhum produto foi encontrado!
         </h4>
+        <img
+          src={ notFound }
+          alt='Produto não encontrado'
+          width="50%"
+        />
       </section>
       )
       : <ProductCard list={ products }/>

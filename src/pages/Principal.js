@@ -50,17 +50,19 @@ export default function Principal() {
         <img
           src={ notFound }
           alt='Produto não encontrado'
-          width="50%"
+          width="40%"
         />
       </section>
       )
       : <ProductCard list={ products }/>
   );
 
+  const checkingResults = (category.length === 0 || category === "Categorias")
+
   return (
     <div>
       {
-        category.length === 0 ? verifyProducts
+        checkingResults ? verifyProducts
         : (
           <ProductCard list={ products }/>
         )

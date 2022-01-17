@@ -3,6 +3,7 @@ import globalContext from '../context/globalContext';
 import ProductCard from '../components/ProductCard';
 import { getProductsByQuery } from '../services/productsAPI';
 import notFound from '../images/notFound.svg';
+import '../style/Principal.css';
 
 export default function Principal() {
   const { search, category,
@@ -43,7 +44,9 @@ export default function Principal() {
   const verifyProducts = (
     products.length === 0 ?
       (
-      <section>
+      <section
+        className='no-products-found'
+      >
         <h4>
           Nenhum produto foi encontrado!
         </h4>
@@ -60,7 +63,9 @@ export default function Principal() {
   const checkingResults = (category.length === 0 || category === "Categorias")
 
   return (
-    <div>
+    <div
+      className='principal-container'
+    >
       {
         checkingResults ? verifyProducts
         : (

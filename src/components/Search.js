@@ -33,7 +33,7 @@ export default function Search() {
       onClick={ handleClickSearch }>
         <img
           src="https://img.icons8.com/ios/50/000000/search--v4.png"
-          width="30px"
+          width="20px"
         />
       </buttton>
     </div>

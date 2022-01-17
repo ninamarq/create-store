@@ -1,0 +1,22 @@
+.principal-container {
+  display: flex;
+}
+
+.no-products-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  /* Apenas para visualização do container */
+  border: 1px solid black;
+}

@@ -75,3 +75,18 @@
 .product-available {
   color: #888888;
 }
+
+.specification-list {
+  font-size: 0.80rem;
+}
+
+.product-info-buy svg {
+  color: #3EB68A;
+}
+
+.star-reputation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

@@ -3,9 +3,12 @@ import globalContext from '../context/globalContext';
 import '../style/ProductDetail.css';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { AiFillThunderbolt } from 'react-icons/ai';
+import { FaStar } from 'react-icons/fa';
 
 export default function ProductDetail() {
   const { details, addToCart } = useContext(globalContext);
+  const starSeller = details.seller.seller_reputation.level_id.split('')[0];
+
   return(
     <div
       className='product-detail'
@@ -22,13 +25,19 @@ export default function ProductDetail() {
       <section
         className='product-specification'
       >
-        <h2>
+        <h3>
           { details.title }
-        </h2>
-        <h3>O que você precisa saber sobre este produto</h3>
+        </h3>
+        <h4
+          className='specification-list'
+        >
+          O que você precisa saber sobre este produto
+        </h4>
         {
           details.attributes.map((att) => (
-            <li><b>{ att.name }:</b> { att.value_name }</li>
+            <li
+              className='specification-list'
+            >{ att.name }: { att.value_name }</li>
           ))
         }
       </section>
@@ -36,6 +45,18 @@ export default function ProductDetail() {
         className='product-info-buy'
       > 
         <h2>Informações sobre o vendedor</h2>
+        <h4>Avaliação do vendedor</h4>
+        <div
+          className='star-reputation'
+        >
+          <p>
+            <FaStar />
+            { ' ' }
+            <b>{ starSeller }</b>
+            { ' ' }
+            Estrelas
+          </p>
+        </div>
         <h4>Localização</h4>
         <div
           className='product-localization'

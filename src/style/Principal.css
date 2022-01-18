@@ -43,11 +43,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.25rem;
+  padding: 0rem;
+  margin: 0;
+  align-self: center;
 }
 
 .product-img {
-  width: 60%;
+  height: 10rem; /* 60px */
+  width: 11rem; /* 60px */
 }
 
 .product-card button {
@@ -56,6 +59,7 @@
   border-radius: 0.3125rem; /* 5px */
   border: 0;
   color: #FFF;
+  width: 15rem; /* 90px */
 }
 
 .product-card button:hover {
@@ -64,12 +68,17 @@
 }
 
 .to-cart svg {
-  /* background-color: blue; */
   font-size: 1.25rem; /* 20px */
 }
 
 .product-text {
   padding: 0.625rem; /* 10px */
+  height: 15rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   border-top: 0.0625rem solid rgb(221, 221, 221); /* 1px */
   text-align: left;
 }
@@ -82,7 +91,7 @@
 .discount-price {
   font-size: 0.70rem;
   text-decoration: line-through;
-  color: #b94d4d;
+  color: #888888;
 }
 
 .product-prices  {
@@ -92,7 +101,16 @@
   margin: 0;
 }
 
-.product-prices h3, p {
+.product-prices h3, h4, p {
   margin: 0;
   padding: 0;
+}
+
+.product-prices h3 {
+  color: #d34b4b;
+}
+
+.price-installment {
+  font-size: 0.80rem;
+  color: rgba(3, 3, 3, 0.733);
 }

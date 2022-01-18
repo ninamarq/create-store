@@ -35,7 +35,6 @@ export default function ProductCard(props) {
               className='product-img'
               src={ product.thumbnail }
               alt={ product.title }
-              width="200px"
               />
             <section
               className='product-text'
@@ -57,6 +56,11 @@ export default function ProductCard(props) {
                     </p>
                   )
                 }
+                <p
+                  className='price-installment'
+                >
+                  em até <b>12x</b> de <b>R$ { (product.price/12).toFixed(2) }</b>
+                </p>
               </div>
               <p
                 className='product-card-title'

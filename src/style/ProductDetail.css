@@ -1,0 +1,14 @@
+.product-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  padding: 20px;
+  border: 1px solid red;
+}
+
+.product-to-detail {
+  border: 1px solid blueviolet;
+  
+}

@@ -25,9 +25,9 @@ export default function ProductDetail() {
       <section
         className='product-specification'
       >
-        <h3>
+        <h2>
           { details.title }
-        </h3>
+        </h2>
         <h4
           className='specification-list'
         >
@@ -83,12 +83,16 @@ export default function ProductDetail() {
             em até <b>12x</b> de <b>R$ { (details.price/12).toFixed(2) }</b>
           </p>
         </div>
-        <div
-          className='free-shipping-details'
-        >
-          <h3>Frete Grátis</h3>
-          <AiFillThunderbolt />
-        </div>
+        {
+          details.shipping.free_shipping && (
+            <div
+              className='free-shipping'
+            >
+              <h4>Frete Grátis</h4>
+              <AiFillThunderbolt />
+            </div>
+        )
+        }
         {
           details.available_quantity > 0 ? (
             <p

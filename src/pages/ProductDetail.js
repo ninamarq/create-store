@@ -45,18 +45,24 @@ export default function ProductDetail() {
         className='product-info-buy'
       > 
         <h2>Informações sobre o vendedor</h2>
-        <h4>Avaliação do vendedor</h4>
-        <div
-          className='star-reputation'
-        >
-          <p>
-            <FaStar />
-            { ' ' }
-            <b>{ starSeller }</b>
-            { ' ' }
-            Estrelas
-          </p>
-        </div>
+        {
+          details.seller.seller_reputation.level_id && (
+            <section>
+              <h4>Avaliação do vendedor</h4>
+              <div
+                className='star-reputation'
+              >
+                <p>
+                  <FaStar />
+                  { ' ' }
+                  <b>{ starSeller }</b>
+                  { ' ' }
+                  Estrelas
+                </p>
+              </div>
+            </section>
+          )
+        }
         <h4>Localização</h4>
         <div
           className='product-localization'

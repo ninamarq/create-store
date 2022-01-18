@@ -32,7 +32,7 @@ export default function Search() {
         placeholder="Digite o produto"
       />
       <buttton
-      type="submit"
+      type="button"
       id="searchbar-button"
       onClick={ handleClickSearch }>
         <img

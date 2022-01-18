@@ -8,7 +8,9 @@ import '../style/Header.css';
 function Header() {
   const navigate = useNavigate();
   return (
-    <header>
+    <header
+      className="header-app"
+    >
       <section
         id="title-logo"
         onClick={ () => navigate('/') }

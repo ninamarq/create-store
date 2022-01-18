@@ -21,9 +21,9 @@ export default function ProductDetail() {
       <section
         className='product-specification'
       >
-        <h1>
+        <h3>
           { details.title }
-        </h1>
+        </h3>
         <h5
           style={ { color: "rgb(74, 158, 35)" } }
         >{

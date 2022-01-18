@@ -1,34 +1,34 @@
-header {
+.header-app {
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: #FFF;
   font-family: 'Kanit', sans-serif;
   background-color: #3EB68A;
-  height: 60px;
+  height: 3.75rem; /* 60px */
 }
 
-select {
+.header-app select {
   font-size: medium;
   font-family: 'Kanit', sans-serif;
-  padding: 10px;
+  padding: 0.625rem; /* 10px */
   color: #FFF;
   background-color: #3EB68A;
   border: 0;
   text-align: center;
 }
 
-select:hover {
+.header-app select:hover {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.767);
   transition: 0.5s;
 }
 
-select ::-webkit-scrollbar {
+.header-app select ::-webkit-scrollbar {
   background-color: #3EB68A;
 }
 
-select ::-webkit-scrollbar-thumb {
+.header-app select ::-webkit-scrollbar-thumb {
   background-color: #FFF;
 }
 
@@ -45,16 +45,16 @@ select ::-webkit-scrollbar-thumb {
 .search-bar {
   display: inline-flex;
   width: 100%;
-  max-width: 500px;
+  max-width: 32.25rem; /* 500px */
   font-family: 'Kanit', sans-serif;
   padding: 2%;
-  font-size: 17px;
+  font-size: 1rem;
   border: 10;
 }
 
 .searchbar-input {
   flex-grow: 1;
-  padding: 10px;
+  padding: 0.625rem; /* 10px */
   outline: none;
   border: 0;
   border-radius: 5px 0 0 5px;
@@ -64,7 +64,7 @@ select ::-webkit-scrollbar-thumb {
 
 .searchbar-input:focus {
   background-color: #FFF;
-  box-shadow: 0 0 2px #dfdfdfe3;
+  box-shadow: 0 0 0.125rem #dfdfdfe3; /* 2px */
 }
 
 .searchbar-input::placeholder {
@@ -72,7 +72,7 @@ select ::-webkit-scrollbar-thumb {
 }
 
 #searchbar-button {
-  width: 40px;
+  width: 2.5rem; /* 40px */
   background-color: #FFF;
   color: #FFF;
   outline: none;
@@ -80,7 +80,7 @@ select ::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 0.3125rem 0.3125rem 0; /* 0 5px 5px 0 */
   cursor: pointer;
   user-select: none;
 }
@@ -88,7 +88,7 @@ select ::-webkit-scrollbar-thumb {
 .to-cart {
   background-color: #3EB68A;
   border: 0;
-  padding: 10px;
+  padding: 0.625rem; /* 10px */
   color: #FFF;
 }
 

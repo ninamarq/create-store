@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import cart from '../images/cart2.ico'
+import cart from '../images/cart2.ico';
+import { FaShoppingCart } from 'react-icons/fa';
 
 export default function RedirectToCart() {
   const navigate = useNavigate()
@@ -15,10 +16,11 @@ export default function RedirectToCart() {
     type="button"
     onClick={ redirectCart }
     >
-      <img
+      <FaShoppingCart />
+      {/* <img
       src={ cart }
       width="25px"
-      />
+      /> */}
     </button>
   );
 }

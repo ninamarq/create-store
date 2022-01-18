@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 3.125rem; /* 50px */
 }
 
 .products-list {
@@ -15,7 +15,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem; /* 10px */
 }
 
 .product-card {
@@ -24,17 +24,17 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  padding: 10px;
-  margin: 10px;
-  width: 250px;
-  height: 520px;
-  border-radius: 8px;
+  padding: 0.625rem; /* 10px */
+  margin: 0.625rem; /* 10px */
+  width: 15.625rem; /* 250px */
+  height: 31.25rem; /* 500px */
+  border-radius: 0.5rem; /* 8px */
   background-color: rgb(255, 255, 255);
 }
 
 .product-card:hover {
   cursor: pointer;
-  box-shadow: 5px 5px 5px 5px rgb(221, 221, 221);
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem 0.3125rem rgb(221, 221, 221); /* 5px */
   transition: 0.20s;
 }
 
@@ -48,8 +48,8 @@
 
 .product-card button {
   background-color: rgba(53, 156, 118, 0.897);
-  padding: 10px;
-  border-radius: 5px;
+  padding: 0.625rem; /* 10px */;
+  border-radius: 0.3125rem; /* 5px */
   border: 0;
   color: #FFF;
 }
@@ -59,8 +59,13 @@
   cursor: pointer;
 }
 
+.to-cart svg {
+  /* background-color: blue; */
+  font-size: 1.25rem; /* 20px */
+}
+
 .product-text {
-  padding: 10px;
-  border-top: 1px solid rgb(221, 221, 221);
+  padding: 0.625rem; /* 10px */;
+  border-top: 0.0625rem solid rgb(221, 221, 221); /* 1px */
   text-align: left;
 }

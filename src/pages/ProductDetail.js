@@ -28,7 +28,7 @@ export default function ProductDetail() {
         <h3>O que você precisa saber sobre este produto</h3>
         {
           details.attributes.map((att) => (
-            <p><b>{ att.name }:</b> { att.value_name }</p>
+            <li><b>{ att.name }:</b> { att.value_name }</li>
           ))
         }
       </section>

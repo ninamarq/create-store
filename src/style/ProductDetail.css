@@ -18,6 +18,8 @@
 
 .product-specification {
   padding: 0.625rem; /* 10px */
+  padding-left: 2rem; /* 10px */
+  padding-right: 2rem; /* 10px */
   margin: 1.25rem; /* 20px */
   display: flex;
   flex-direction: column;

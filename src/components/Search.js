@@ -1,19 +1,23 @@
 import React, { useContext } from 'react';
 import globalContext from '../context/globalContext';
+import { useNavigate } from "react-router-dom";
 import { getProductsByQuery, getProductsFromCategoryAndQuery } from '../services/productsAPI';
 
 export default function Search() {
   const { handleSearch, category,
     search, setProducts } = useContext(globalContext);
+  const navigate = useNavigate();
 
   async function handleClickSearch() {
     if (category.length === 0) {
       const productsResult = await getProductsByQuery(search);
       setProducts(productsResult);
+      navigate('/');
     }
     if (category.length > 0) {
       const productsQueryCat = await getProductsFromCategoryAndQuery({ id: category }, search);
       setProducts(productsQueryCat);
+      navigate('/');
     }
   }
 

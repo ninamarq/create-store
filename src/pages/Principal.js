@@ -13,7 +13,7 @@ export default function Principal() {
 
   useEffect(async () => {
     if (category.length === 0 && search.length === 0) {
-      const initial_products = await getProductsByQuery("programação");
+      const initial_products = await getProductsByQuery("gamer");
       setProducts(initial_products);
     }
     if (finishShop) {
@@ -36,7 +36,7 @@ export default function Principal() {
         securityCode: 0,
       });
       clearCart();
-      const initial_products = await getProductsByQuery("programação");
+      const initial_products = await getProductsByQuery("gamer");
       setProducts(initial_products);
     }
   }, []);

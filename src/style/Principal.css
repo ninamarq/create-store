@@ -16,7 +16,6 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: rgb(245, 245, 245);
 }
 
 .product-card {
@@ -28,7 +27,7 @@
   padding: 10px;
   margin: 10px;
   width: 250px;
-  height: 450px;
+  height: 520px;
   border-radius: 8px;
   background-color: rgb(255, 255, 255);
 }

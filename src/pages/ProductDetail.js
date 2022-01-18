@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import { useNavigate } from "react-router-dom";
 import globalContext from '../context/globalContext';
 import '../style/ProductDetail.css';
+import localizationIcon from '../images/localization.svg';
 
 export default function ProductDetail() {
-  const navigate = useNavigate()
   const { details, addToCart } = useContext(globalContext);
   return(
     <div
@@ -13,33 +12,24 @@ export default function ProductDetail() {
       <section
         className='product-to-detail'
       >
-        <h3>
-          { details.title }
-        </h3>
         <img
           src={ details.thumbnail }
           alt={ details.title }
-          width="200px"
+          width="300px"
         />
-      </section>
-      <section
-        className='product-localization'
-      >
-        <table>
-          <tr>
-            <th>Cidade</th>
-            <th>Estado</th>
-          </tr>
-          <tr>
-            <td>{ details.address.city_name }</td>
-            <td>{ details.address.state_name }</td>
-          </tr>
-        </table>        
       </section>
       <section
         className='product-specification'
       >
-        <h4>Especificações técnicas</h4>
+        <h1>
+          { details.title }
+        </h1>
+        <h5
+          style={ { color: "rgb(74, 158, 35)" } }
+        >{
+          details.shipping.free_shipping ? "Frete Grátis" : "Frete a ser calculado"
+        }</h5>
+        <h4>O que você precisa saber sobre este produto</h4>
         <ul>
           {
             details.attributes.map((att) => (
@@ -47,7 +37,9 @@ export default function ProductDetail() {
             ))
           }
         </ul>
-        <table>
+        <table
+          style={ { textAlign: "center" } }
+        >
           <tr>
             <th>Estoque</th>
             <th>Já vendidos</th>
@@ -58,12 +50,26 @@ export default function ProductDetail() {
           </tr>
         </table>
       </section>
-      <button
-        onClick={() => addToCart(details)}
-      >Adicionar ao Carrinho</button>
-      <button
-        onClick={() => navigate('/')}
-      >Voltar</button>
+      <section
+        className='product-info-buy'
+      > 
+        <h3>Informações sobre o vendedor</h3>
+        <h4>Localização</h4>
+        <div
+          className='product-localization'
+        >
+          <img
+            src={ localizationIcon }
+            alt="Localização vendedor"
+            width="30px"
+          />
+          <p>{ details.address.city_name }, { details.address.state_name }</p>
+        </div>
+        <h2>R$ { details.price.toFixed(2) }</h2>
+        <button
+          onClick={() => addToCart(details)}
+        >Adicionar ao Carrinho</button>
+      </section>
     </div>
   )
 }

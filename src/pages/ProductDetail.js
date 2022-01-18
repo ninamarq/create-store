@@ -7,7 +7,7 @@ import { FaStar } from 'react-icons/fa';
 
 export default function ProductDetail() {
   const { details, addToCart } = useContext(globalContext);
-  const starSeller = details.seller.seller_reputation.level_id.split('')[0];
+  const starSeller = details.seller.seller_reputation.level_id && details.seller.seller_reputation.level_id.split('')[0];
 
   return(
     <div
@@ -92,7 +92,7 @@ export default function ProductDetail() {
         {
           details.shipping.free_shipping && (
             <div
-              className='free-shipping'
+              className='free-shipping-details'
             >
               <h4>Frete Grátis</h4>
               <AiFillThunderbolt />

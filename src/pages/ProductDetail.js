@@ -22,34 +22,20 @@ export default function ProductDetail() {
       <section
         className='product-specification'
       >
-        <h3>
+        <h2>
           { details.title }
-        </h3>
-        <h4>O que você precisa saber sobre este produto</h4>
-        <ul>
-          {
-            details.attributes.map((att) => (
-              <li>{ att.name }: { att.value_name }</li>
-            ))
-          }
-        </ul>
-        <table
-          style={ { textAlign: "center" } }
-        >
-          <tr>
-            <th>Estoque</th>
-            <th>Já vendidos</th>
-          </tr>
-          <tr>
-            <td>{ details.available_quantity }</td>
-            <td>{ details.sold_quantity }</td>
-          </tr>
-        </table>
+        </h2>
+        <h3>O que você precisa saber sobre este produto</h3>
+        {
+          details.attributes.map((att) => (
+            <p><b>{ att.name }:</b> { att.value_name }</p>
+          ))
+        }
       </section>
       <section
         className='product-info-buy'
       > 
-        <h3>Informações sobre o vendedor</h3>
+        <h2>Informações sobre o vendedor</h2>
         <h4>Localização</h4>
         <div
           className='product-localization'
@@ -57,13 +43,42 @@ export default function ProductDetail() {
           <FaMapMarkerAlt />
           <p> { details.address.city_name }, { details.address.state_name }</p>
         </div>
-        <h2>R$ { details.price.toFixed(2) }</h2>
+        <div
+          className='product-prices'
+        >
+          <h3>R$ { details.price.toFixed(2) }</h3>
+          {
+            details.original_price && (
+              <p
+                className='discount-price'
+              >
+                R$ { details.original_price.toFixed(2) }
+              </p>
+            )
+          }
+          <p
+            className='price-installment'
+          >
+            em até <b>12x</b> de <b>R$ { (details.price/12).toFixed(2) }</b>
+          </p>
+        </div>
         <div
           className='free-shipping-details'
         >
-          <h4>Frete Grátis</h4>
+          <h3>Frete Grátis</h3>
           <AiFillThunderbolt />
         </div>
+        {
+          details.available_quantity > 0 ? (
+            <p
+              className='product-available'
+            >
+              <b>Estoque disponível!</b> ({ details.available_quantity } disponíveis)
+            </p>
+          ) : (
+            <h4>Produto Indisponível</h4>
+          )
+        }
         <button
           onClick={() => addToCart(details)}
         >Adicionar ao Carrinho</button>

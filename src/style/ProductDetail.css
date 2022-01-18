@@ -32,7 +32,8 @@
   flex-direction: column;
   padding: 0.625rem; /* 10px */
   margin: 0.625rem; /* 10px */
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .product-info-buy table {
@@ -44,7 +45,8 @@
   margin: 0.3125rem; /* 5px */
   padding: 0.625rem; /* 10px */
   border-radius: 0.3125rem; /* 5px */
-  width: 12.5rem; /* 200px */
+  width: 20rem; /* 200px */
+  height: 3rem; /* 200px */
   border: 0;
   color: #FFF;
 }
@@ -66,4 +68,8 @@
   justify-content: flex-start;
   align-items: center;
   padding: 0.25rem;
+}
+
+.product-available {
+  color: #888888;
 }

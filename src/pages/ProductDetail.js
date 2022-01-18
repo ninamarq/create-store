@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import globalContext from '../context/globalContext';
 import '../style/ProductDetail.css';
-import localizationIcon from '../images/localization.svg';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { AiFillThunderbolt } from 'react-icons/ai';
 
 export default function ProductDetail() {
   const { details, addToCart } = useContext(globalContext);
@@ -24,11 +25,6 @@ export default function ProductDetail() {
         <h3>
           { details.title }
         </h3>
-        <h5
-          style={ { color: "rgb(74, 158, 35)" } }
-        >{
-          details.shipping.free_shipping ? "Frete Grátis" : "Frete a ser calculado"
-        }</h5>
         <h4>O que você precisa saber sobre este produto</h4>
         <ul>
           {
@@ -58,14 +54,16 @@ export default function ProductDetail() {
         <div
           className='product-localization'
         >
-          <img
-            src={ localizationIcon }
-            alt="Localização vendedor"
-            width="30px"
-          />
-          <p>{ details.address.city_name }, { details.address.state_name }</p>
+          <FaMapMarkerAlt />
+          <p> { details.address.city_name }, { details.address.state_name }</p>
         </div>
         <h2>R$ { details.price.toFixed(2) }</h2>
+        <div
+          className='free-shipping-details'
+        >
+          <h4>Frete Grátis</h4>
+          <AiFillThunderbolt />
+        </div>
         <button
           onClick={() => addToCart(details)}
         >Adicionar ao Carrinho</button>

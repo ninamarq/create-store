@@ -59,3 +59,11 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.free-shipping-details {
+  color: rgb(74, 158, 35);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.25rem;
+}

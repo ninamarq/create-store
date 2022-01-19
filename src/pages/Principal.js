@@ -2,16 +2,18 @@ import React, { useContext, useEffect } from 'react';
 import globalContext from '../context/globalContext';
 import ProductCard from '../components/ProductCard';
 import { getProductsByQuery } from '../services/productsAPI';
+import notFound from '../images/notFound.svg';
+import '../style/Principal.css';
 
 export default function Principal() {
   const { search, category,
     products, setProducts,
     finishShop, setFinished, clearCart,
-    setData, setCategory } = useContext(globalContext);
+    setData } = useContext(globalContext);
 
   useEffect(async () => {
     if (category.length === 0 && search.length === 0) {
-      const initial_products = await getProductsByQuery("programação");
+      const initial_products = await getProductsByQuery("gamer");
       setProducts(initial_products);
     }
     if (finishShop) {
@@ -34,23 +36,38 @@ export default function Principal() {
         securityCode: 0,
       });
       clearCart();
-      const initial_products = await getProductsByQuery("programação");
+      const initial_products = await getProductsByQuery("gamer");
       setProducts(initial_products);
     }
   }, []);
 
   const verifyProducts = (
     products.length === 0 ?
-      (<h4>
-        Nenhum produto foi encontrado!
-      </h4>)
+      (
+      <section
+        className='no-products-found'
+      >
+        <h4>
+          Nenhum produto foi encontrado!
+        </h4>
+        <img
+          src={ notFound }
+          alt='Produto não encontrado'
+          width="40%"
+        />
+      </section>
+      )
       : <ProductCard list={ products }/>
   );
 
+  const checkingResults = (category.length === 0 || category === "Categorias")
+
   return (
-    <div>
+    <div
+      className='principal-container'
+    >
       {
-        category.length === 0 ? verifyProducts
+        checkingResults ? verifyProducts
         : (
           <ProductCard list={ products }/>
         )

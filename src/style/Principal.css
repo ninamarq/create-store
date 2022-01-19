@@ -1,0 +1,116 @@
+.principal-container {
+  display: flex;
+}
+
+.no-products-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3.125rem; /* 50px */
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.625rem; /* 10px */
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 0.625rem; /* 10px */
+  margin: 0.625rem; /* 10px */
+  width: 15.625rem; /* 250px */
+  height: 31.25rem; /* 500px */
+  border-radius: 0.5rem; /* 8px */
+  background-color: rgb(255, 255, 255);
+}
+
+.product-card:hover {
+  cursor: pointer;
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem 0.3125rem rgb(221, 221, 221); /* 5px */
+  transition: 0.20s;
+}
+
+.free-shipping {
+  color: rgb(74, 158, 35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+  margin: 0;
+  align-self: center;
+}
+
+.product-img {
+  height: 12rem; /* 60px */
+  width: 11rem; /* 60px */
+}
+
+.product-card button {
+  background-color: rgba(53, 156, 118, 0.897);
+  padding: 0.625rem; /* 10px */;
+  border-radius: 0.3125rem; /* 5px */
+  border: 0;
+  color: #FFF;
+  width: 15rem; /* 90px */
+}
+
+.product-card button:hover {
+  background-color: #3EB68A;
+  cursor: pointer;
+}
+
+.to-cart svg {
+  font-size: 1.25rem; /* 20px */
+}
+
+.product-text {
+  padding: 0.625rem; /* 10px */
+  height: 15rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-top: 0.0625rem solid rgb(221, 221, 221); /* 1px */
+  text-align: left;
+}
+
+.product-card-title {
+  height: 6.25rem; /* 100px */
+  margin-top: 1rem;
+}
+
+.discount-price {
+  font-size: 0.70rem;
+  text-decoration: line-through;
+  color: #888888;
+}
+
+.product-prices  {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.product-prices h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+.product-prices h3 {
+  color: #d34b4b;
+}
+
+.price-installment {
+  font-size: 0.80rem;
+  color: rgba(3, 3, 3, 0.733);
+}

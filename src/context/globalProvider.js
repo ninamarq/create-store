@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getProductsByCategory } from '../services/productsAPI';
+import { getProductsByCategory, getProductsFromCategoryAndQuery } from '../services/productsAPI';
 import globalContext from './globalContext';
 
 function Provider({ children }) {
@@ -34,9 +34,15 @@ function Provider({ children }) {
   }
 
   async function selectCategory({ target }) {
-    setCategory(target.value);
-    const categoriedProducts = await getProductsByCategory(target.value);
-    setProducts(categoriedProducts);
+    if (search.length > 0) {
+      setCategory(target.value);
+      const productsCatAndQue = await getProductsFromCategoryAndQuery({ id: target.value }, search);
+      setProducts(productsCatAndQue);
+    } else {
+      setCategory(target.value);
+      const categoriedProducts = await getProductsByCategory(target.value);
+      setProducts(categoriedProducts);
+    }
   }
 
   function addToCart(product) {

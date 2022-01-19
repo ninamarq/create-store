@@ -6,6 +6,7 @@ import Principal from './pages/Principal';
 import Cart from './pages/Cart';
 import ProductDetail from './pages/ProductDetail';
 import FinishingShop from './pages/FinishingShop';
+import './style/Global.css';
 
 function App() {
   return (

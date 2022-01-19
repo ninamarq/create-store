@@ -104,8 +104,12 @@ export default function BuyerData() {
   }
 
   return(
-    <>
-    <section>
+    <div
+      className="form-buyer"
+    >
+    <section
+      className="products-form"
+    >
       <h3>Revise seus Produtos</h3>
         {
           cart.map((product) => (
@@ -130,7 +134,9 @@ export default function BuyerData() {
         }
       </h3>
     </section>
-    <section>
+    <section
+      className="buyer-data-form"
+    >
       <h3>Informações do Comprador</h3>
       <form>
         <input
@@ -193,67 +199,72 @@ export default function BuyerData() {
           onChange={handleChange}
           value={ buyerData.state }
         >
-          {brStates.map((state) => (
-            <option
-              value={state}
-            >{state}</option>
-          ))}
+          {
+            brStates.map((state) => (
+              <option
+                value={state}
+              >{state}</option>
+            ))
+          }
         </select>
       </form>
-    </section><section>
-        <h3>Método de Pagamento</h3>
-        <label
-          htmlFor="boleto"
-        >
-          Boleto
-          <input
-            type="radio"
-            name="payment"
-            id="boleto"
-            value="Boleto"
-            onChange={handleChange} />
-        </label>
-        <p>Cartão de Crédito</p>
-        <label
-          htmlFor="visa"
-        >
-          Visa
-          <input
-            type="radio"
-            name="payment"
-            id="visa"
-            value="Visa"
-            onChange={handleChange} />
-        </label>
-        <label
-          htmlFor="mastercard"
-        >
-          MasterCard
-          <input
-            type="radio"
-            name="payment"
-            id="mastercard"
-            value="Mastercard"
-            onChange={handleChange} />
-        </label><label
-          htmlFor="elo"
-        >
-          Elo
-          <input
-            type="radio"
-            name="payment"
-            value="Elo"
-            id="elo"
-            onChange={handleChange} />
-        </label>
-      </section>
-      {
-        checkingPayment()
-      }
-      <button
-        type="button"
-        onClick={ () => dataValidation() }
-      >Confirmar Compra</button>
-      </>
+    </section>
+    <section
+      className="payment-form"
+    >
+      <h3>Método de Pagamento</h3>
+      <label
+        htmlFor="boleto"
+      >
+        Boleto
+        <input
+          type="radio"
+          name="payment"
+          id="boleto"
+          value="Boleto"
+          onChange={handleChange} />
+      </label>
+      <p>Cartão de Crédito</p>
+      <label
+        htmlFor="visa"
+      >
+        Visa
+        <input
+          type="radio"
+          name="payment"
+          id="visa"
+          value="Visa"
+          onChange={handleChange} />
+      </label>
+      <label
+        htmlFor="mastercard"
+      >
+        MasterCard
+        <input
+          type="radio"
+          name="payment"
+          id="mastercard"
+          value="Mastercard"
+          onChange={handleChange} />
+      </label><label
+        htmlFor="elo"
+      >
+        Elo
+        <input
+          type="radio"
+          name="payment"
+          value="Elo"
+          id="elo"
+          onChange={handleChange} />
+      </label>
+    {
+      checkingPayment()
+    }
+    </section>
+    <button
+      type="button"
+      onClick={ () => dataValidation() }
+    >Confirmar Compra</button>
+    </div>
   );
 }

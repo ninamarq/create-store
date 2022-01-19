@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getProductsByCategory, getProductsFromCategoryAndQuery } from '../services/productsAPI';
 import globalContext from './globalContext';
+import { toast } from 'react-toastify';
 
 function Provider({ children }) {
   const [search, setSearch] = useState('');
@@ -55,9 +56,19 @@ function Provider({ children }) {
         return element;
       });
       setCart(newCart);
+      toast.success("Adicionado ao Carrinho!", {
+        position: toast.POSITION.TOP_RIGHT,
+        closeOnClick: true,
+        pauseOnHover: false,
+      });
     } else {
       product.quantity = 1;
       setCart([...cart, product]);
+      toast.success("Adicionado ao Carrinho!", {
+        position: toast.POSITION.TOP_RIGHT,
+        closeOnClick: true,
+        pauseOnHover: false,
+      });
     }
   }
 

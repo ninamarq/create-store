@@ -1,3 +1,26 @@
 .cart-list {
-  
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 2rem;
+  border: 3px solid purple;
+}
+
+.cart-list .empty-cart {
+  color: rgb(97, 97, 97);
+}
+
+.cart-list .product-at-cart-list {
+  display: inline;
+  border: 1px solid blue;
+  flex-direction: row;
+}
+
+.cart-list .product-at-cart {
+  display: flex;
+  flex-direction: row;
+  margin: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid red;
+  flex-direction: row;
 }

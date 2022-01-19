@@ -13,7 +13,9 @@ export default function Cart() {
     >
       {
         cart.length === 0 ? (
-          <section>
+          <section
+            className="empty-cart"
+          >
             <h2>
               Seu carrinho está vazio!
             </h2>

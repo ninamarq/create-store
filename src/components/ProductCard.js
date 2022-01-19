@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import globalContext from '../context/globalContext';
 import { useNavigate } from "react-router-dom";
 import { AiFillThunderbolt } from 'react-icons/ai';
+import { FaCartPlus } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 export default function ProductCard(props) {
   const { list } = props;
@@ -14,6 +16,14 @@ export default function ProductCard(props) {
       return `${ title.slice(0, limit) }...`;
     }
     return title;
+  }
+
+  function alertAddToCart() {
+    toast.success("Adicionado ao Carrinho!", {
+      position: toast.POSITION.TOP_RIGHT,
+      pauseOnHover: false,
+      closeOnClick: true,
+    });  
   }
 
   return (
@@ -77,7 +87,10 @@ export default function ProductCard(props) {
               }
             </section>
             <button
-              onClick={ () => addToCart(product) }
+              onClick={ () => {
+                alertAddToCart()
+                addToCart(product) 
+              }}
             >Adicionar ao Carrinho</button>
           </div>
         ))

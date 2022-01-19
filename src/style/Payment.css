@@ -19,7 +19,11 @@
   display: inline;
   width: 90rem;
   padding: 0.5rem;
-  border: 1px solid blue;
+}
+
+.products-form h3 {
+  color: #383838;
+  padding: 0.25rem;
 }
 
 .products-form .product-card-check {
@@ -28,7 +32,7 @@
   align-items: center;
   padding: 0.5rem;
   margin: 0.5rem;
-  border: 1px solid green;
+  border-bottom: 1px solid #b8b8b8;
 }
 
 .products-form .product-card-check img {
@@ -37,7 +41,7 @@
 }
 
 .products-form .product-card-check h4 {
-  color: #525252;
+  color: #444444;
   padding: 1rem;
 }
 
@@ -47,7 +51,37 @@
 }
 
 .product-card-check .product-card-check-other {
-  border: 1px solid red;
   text-align: center;
   width: 5rem;
+}
+
+.buyer-data-form {
+  display: flex;
+  flex-direction: column;
+  width: 90rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #b8b8b8;
+  border-top: 1px solid #b8b8b8;
+}
+
+.buyer-data-form form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buyer-data-form form input {
+  padding: 0.75rem;
+  margin: 0.75rem;
+  width: 18rem;
+}
+
+.buyer-data-form form select {
+  padding: 0.75rem;
+  margin: 0.75rem;
+  width: 20rem;
+}
+
+.buyer-data-form h3 {
+  color: #383838;
+  padding: 0.25rem;
 }

@@ -77,7 +77,7 @@ export default function ProductCard(props) {
               }
             </section>
             <button
-              onClick={() => addToCart(product)}
+              onClick={ () => addToCart(product) }
             >Adicionar ao Carrinho</button>
           </div>
         ))

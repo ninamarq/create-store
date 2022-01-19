@@ -110,9 +110,20 @@ export default function ProductDetail() {
             <h4>Produto Indisponível</h4>
           )
         }
-        <button
-          onClick={() => addToCart(details)}
-        >Adicionar ao Carrinho</button>
+        {
+          details.available_quantity > 0 ? (
+            <button
+            type='button'
+            onClick={() => addToCart(details)}
+            >Adicionar ao Carrinho</button>
+          ) : (
+            <button
+              type='button'
+              disabled='true'
+            >Produto Indisponível</button>
+          )
+        }
+
       </section>
     </div>
   )

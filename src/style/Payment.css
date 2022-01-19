@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;  /* center */
+  align-items: center;  /* center */
   border: 1px solid saddlebrown;
 }
 
@@ -84,4 +84,36 @@
 .buyer-data-form h3 {
   color: #383838;
   padding: 0.25rem;
+}
+
+.payment-form {
+  display: inline;
+  padding: 1rem;
+  text-align: center;
+  color: #1f1f1f;
+}
+
+.payment-form svg {
+  border: 1px solid #b8b8b8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.payment-form svg:hover {
+  border: 1px solid #585858;
+  cursor: pointer;
+  color: #0a0a0a;
+}
+
+.payment-form input[type=radio] {
+  display: none;
+}
+
+.payment-form input {
+  padding: 0.75rem;
+  margin: 0.75rem;
+  width: 18rem;
+  height: 1.5rem;
 }

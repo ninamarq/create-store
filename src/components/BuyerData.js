@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import globalContext from '../context/globalContext';
 import ProductForms from "./ProductForms";
-import swal from 'sweetalert';
 import BuyerDataForm from "./BuyerDataForm";
+import swal from 'sweetalert';
+import { FaCcMastercard,
+  FaCcVisa, FaCreditCard, FaBarcode } from 'react-icons/fa';
 
 export default function BuyerData() {
   const { buyerData, setData,
@@ -75,7 +77,7 @@ export default function BuyerData() {
         <label
           htmlFor="boleto"
         >
-          Boleto
+          <FaBarcode />
           <input
             type="radio"
             name="payment"
@@ -84,41 +86,45 @@ export default function BuyerData() {
             onChange={handleChange} />
         </label>
         <p>Cartão de Crédito</p>
-        <label
-          htmlFor="visa"
+        <div
+          className="credit-cards"
         >
-          Visa
-          <input
-            type="radio"
-            name="payment"
-            id="visa"
-            value="Visa"
-            onChange={handleChange} />
-        </label>
-        <label
-          htmlFor="mastercard"
-        >
-          MasterCard
-          <input
-            type="radio"
-            name="payment"
-            id="mastercard"
-            value="Mastercard"
-            onChange={handleChange} />
-        </label><label
-          htmlFor="elo"
-        >
-          Elo
-          <input
-            type="radio"
-            name="payment"
-            value="Elo"
-            id="elo"
-            onChange={handleChange} />
-        </label>
-      {
-        checkingPayment()
-      }
+          <label
+            htmlFor="visa"
+          >
+            <FaCcVisa />
+            <input
+              type="radio"
+              name="payment"
+              id="visa"
+              value="Visa"
+              onChange={handleChange} />
+          </label>
+          <label
+            htmlFor="mastercard"
+          >
+            <FaCcMastercard />
+            <input
+              type="radio"
+              name="payment"
+              id="mastercard"
+              value="Mastercard"
+              onChange={handleChange} />
+          </label><label
+            htmlFor="elo"
+          >
+            <FaCreditCard />
+            <input
+              type="radio"
+              name="payment"
+              value="Elo"
+              id="elo"
+              onChange={handleChange} />
+          </label>
+          {
+            checkingPayment()
+          }
+        </div>
       </section>
       <button
         type="button"

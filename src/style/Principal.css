@@ -5,9 +5,13 @@
 .no-products-found {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  height: 30rem;
   padding: 3.125rem; /* 50px */
+  margin: 3.125rem auto;
+  font-size: 1.25rem;
+  color: #4e4e4e;
 }
 
 .products-list {

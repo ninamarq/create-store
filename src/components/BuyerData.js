@@ -4,7 +4,8 @@ import { getAdressByZipCode } from '../services/productsAPI';
 import swal from 'sweetalert';
 
 export default function BuyerData() {
-  const { buyerData, setData, cart, setConfirm } = useContext(globalContext);
+  const { buyerData, setData, cart,
+    setConfirm, limitCarac } = useContext(globalContext);
   const brStates =  [
     'Estado',
     'AC',
@@ -35,7 +36,6 @@ export default function BuyerData() {
     'SE',
     'TO',
     ];
-
 // Verifica se o formulário está preenchido
   function dataValidation() {
     const userKeys = Object.keys(buyerData);
@@ -115,16 +115,28 @@ export default function BuyerData() {
           cart.map((product) => (
             <section
               key={ product.title }
-              className="card"
+              className="product-card-check"
             >
               <img
               width="100px"
                 src={ product.thumbnail }
                 alt={ product.title }
               />
-              <h4>{ product.title }</h4>
-              <h4>Qtde: { product.quantity }</h4>
-              <h4>R${ product.price }</h4>
+              <h4
+                className="product-card-check-title"
+              >
+                { limitCarac(product.title) }
+              </h4>
+              <h4
+                className="product-card-check-other"
+              >
+                Qtde: { product.quantity }
+              </h4>
+              <h4
+                className="product-card-check-other"
+              >
+                R${ product.price }
+              </h4>
             </section>
           ))
         }

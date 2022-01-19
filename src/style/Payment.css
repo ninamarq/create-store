@@ -1,0 +1,53 @@
+.shopping-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  width: 100rem;
+  border: 1px solid red;
+}
+
+.form-buyer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;  /* center */
+  border: 1px solid saddlebrown;
+}
+
+.products-form {
+  display: inline;
+  width: 90rem;
+  padding: 0.5rem;
+  border: 1px solid blue;
+}
+
+.products-form .product-card-check {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid green;
+}
+
+.products-form .product-card-check img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.products-form .product-card-check h4 {
+  color: #525252;
+  padding: 1rem;
+}
+
+.product-card-check .product-card-check-title {
+  text-align: center;
+  width: 30rem;
+}
+
+.product-card-check .product-card-check-other {
+  border: 1px solid red;
+  text-align: center;
+  width: 5rem;
+}

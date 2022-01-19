@@ -83,6 +83,14 @@ function Provider({ children }) {
     setSearch('');
   }
 
+  function limitCarac(title) {
+    const limit = 60;
+    if(title.length > limit) {
+      return `${ title.slice(0, limit) }...`;
+    }
+    return title;
+  }
+
   const provideObj = {
     search,
     handleSearch,
@@ -103,6 +111,7 @@ function Provider({ children }) {
     finishShop,
     setFinished,
     clearCart,
+    limitCarac,
   };
 
   return (

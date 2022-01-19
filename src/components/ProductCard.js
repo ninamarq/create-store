@@ -8,15 +8,7 @@ import { toast } from 'react-toastify';
 export default function ProductCard(props) {
   const { list } = props;
   const navigate = useNavigate();
-  const { setDetail, addToCart } = useContext(globalContext);
-
-  function limitCarac(title) {
-    const limit = 80;
-    if(title.length > limit) {
-      return `${ title.slice(0, limit) }...`;
-    }
-    return title;
-  }
+  const { setDetail, addToCart, limitCarac } = useContext(globalContext);
 
   function alertAddToCart() {
     toast.success("Adicionado ao Carrinho!", {

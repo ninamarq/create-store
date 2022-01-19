@@ -4,15 +4,8 @@ import { AiFillThunderbolt } from 'react-icons/ai';
 
 export default function ProductCard(props) {
   const { list } = props;
-  const { addToCart, removeFromCart, deleteFromCart } = useContext(globalContext);
-
-  function limitCarac(title) {
-    const limit = 60;
-    if(title.length > limit) {
-      return `${ title.slice(0, limit) }...`;
-    }
-    return title;
-  }
+  const { addToCart, removeFromCart,
+    deleteFromCart, limitCarac } = useContext(globalContext);
 
   return (
     <div

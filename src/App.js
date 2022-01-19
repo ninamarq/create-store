@@ -7,15 +7,12 @@ import Cart from './pages/Cart';
 import ProductDetail from './pages/ProductDetail';
 import FinishingShop from './pages/FinishingShop';
 import './style/Global.css';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <Provider>
       <BrowserRouter>
         <Header />
-        <ToastContainer autoClose={ 3000 } />
         <Routes>
           <Route path="/" element={ <Principal /> } />
           <Route path="/cart" element={ <Cart /> } />

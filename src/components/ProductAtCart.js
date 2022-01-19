@@ -6,6 +6,14 @@ export default function ProductCard(props) {
   const { list } = props;
   const { addToCart, removeFromCart, deleteFromCart } = useContext(globalContext);
 
+  function limitCarac(title) {
+    const limit = 60;
+    if(title.length > limit) {
+      return `${ title.slice(0, limit) }...`;
+    }
+    return title;
+  }
+
   return (
     <div
       className='product-at-cart-list'
@@ -22,19 +30,28 @@ export default function ProductCard(props) {
                 alt={ product.title }
                 width="200px"
                 />
-              <h4>{ product.title }</h4>
-              {
-                product.shipping.free_shipping && (
-                  <div
-                    className='free-shipping'
-                  >
-                    <h4>Frete Grátis</h4>
-                    <AiFillThunderbolt />
-                  </div>
-              )
-              }
-              <p>R${ product.price.toFixed(2) }</p>
-              <div>
+              <section
+                className='product-cart-text'
+              >
+                <h4
+                  className='product-at-cart-title'
+                >
+                  { limitCarac(product.title) }
+                </h4>
+                {
+                  product.shipping.free_shipping && (
+                    <div
+                      className='free-shipping-cart'
+                    >
+                      <h4>Frete Grátis</h4>
+                      <AiFillThunderbolt />
+                    </div>
+                )
+                }
+              </section>
+              <div
+                className='product-cart-buttons'
+              >
                 <button
                   onClick={ () => removeFromCart(product) }
                   >-</button>
@@ -42,10 +59,16 @@ export default function ProductCard(props) {
                 <button
                   onClick={ () => addToCart(product) }
                 >+</button>
-                <button
-                  onClick={ () => deleteFromCart(product) }
-                >X</button>
               </div>
+                <button
+                  className='remove-cart-button'
+                  onClick={ () => deleteFromCart(product) }
+                >Remover</button>
+              <h3
+                className='product-at-cart-price'
+              >
+                R${ (product.price) * (product.quantity).toFixed(2) }
+              </h3>
             </section>
         ))
       }

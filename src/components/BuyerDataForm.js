@@ -58,7 +58,7 @@ export default function BuyerDataForm() {
     <section
         className="buyer-data-form"
       >
-        <h3>Informações do Comprador</h3>
+        <h2>Informações do Comprador</h2>
         <form>
           <input
             type="text"

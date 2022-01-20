@@ -13,6 +13,9 @@
 
 .cart-list .empty-cart {
   color: rgb(97, 97, 97);
+  margin: 0.625rem;
+  padding: 0.625rem;
+  text-align: center;
 }
 
 .cart-list .product-at-cart-list {

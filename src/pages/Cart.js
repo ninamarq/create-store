@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import globalContext from "../context/globalContext";
 import { useNavigate } from "react-router-dom";
 import ProductAtCard from '../components/ProductAtCart';
+import emptyCart from '../images/empty-cart.svg';
 import '../style/Cart.css';
 
 export default function Cart() {
@@ -16,6 +17,11 @@ export default function Cart() {
           <section
             className="empty-cart"
           >
+            <img
+              src={ emptyCart }
+              alt="Carrinho vazio"
+              width="30%"
+            />
             <h2>
               Seu carrinho está vazio!
             </h2>

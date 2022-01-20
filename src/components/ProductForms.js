@@ -7,7 +7,7 @@ export default function ProductForms() {
   <section
   className="products-form"
   >
-    <h2>Revise seus Produtos</h2>
+    <h3>Revise seus Produtos</h3>
       {
         cart.map((product) => (
           <section

@@ -18,7 +18,7 @@ export default function BuyerData() {
           && key !== "securityCode" && key !== "comp" ) {
           return (buyerData[key].length === 0 || buyerData[key] === 0);
         }
-        return key
+        return false;
       })
     ) : (
       userKeys.some((key) => (key !== "comp") && (
@@ -31,6 +31,7 @@ export default function BuyerData() {
     ) : (
       setConfirm(true)
     )
+    console.log(check)
   }
 
   return(

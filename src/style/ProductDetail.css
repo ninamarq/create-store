@@ -3,10 +3,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin: 2rem; /* 32px */
+  margin: 2rem auto; /* 32px */
   padding: 2rem; /* 32px */
   background-color: #fff;
   border-radius: 0.625rem; /* 10px */
+  height: 35rem;
+  width: 75rem;
   box-shadow: 0.3125rem  /* 5px */0.3125rem  /* 5px */0.3125rem  /* 5px */0.3125rem  /* 5px */rgb(221, 221, 221);
 }
 
@@ -58,6 +60,7 @@
   background-color: #3EB68A;
   cursor: pointer;
 }
+
 
 .product-localization {
   display: flex;

@@ -1,29 +1,50 @@
 import React, { useContext } from 'react';
 import globalContext from '../context/globalContext';
+import { AiFillThunderbolt } from 'react-icons/ai';
 
 export default function ProductCard(props) {
   const { list } = props;
-  const { addToCart, removeFromCart, deleteFromCart } = useContext(globalContext);
+  const { addToCart, removeFromCart,
+    deleteFromCart, limitCarac } = useContext(globalContext);
 
   return (
     <div
-      className='teste'
+      className='product-at-cart-list'
     >
       {
         list.length === 0 ? <h4>Nenhum produto foi adicionado!</h4>
         : list.map((product) => (
             <section
-            className='card'
+              className='product-at-cart'
               key={ product.id }
             >
-              <h4>{ product.title }</h4>
               <img
                 src={ product.thumbnail }
                 alt={ product.title }
                 width="200px"
-              />
-              <p>R${ product.price.toFixed(2) }</p>
-              <div>
+                />
+              <section
+                className='product-cart-text'
+              >
+                <h4
+                  className='product-at-cart-title'
+                >
+                  { limitCarac(product.title) }
+                </h4>
+                {
+                  product.shipping.free_shipping && (
+                    <div
+                      className='free-shipping-cart'
+                    >
+                      <h4>Frete Grátis</h4>
+                      <AiFillThunderbolt />
+                    </div>
+                )
+                }
+              </section>
+              <div
+                className='product-cart-buttons'
+              >
                 <button
                   onClick={ () => removeFromCart(product) }
                   >-</button>
@@ -31,10 +52,16 @@ export default function ProductCard(props) {
                 <button
                   onClick={ () => addToCart(product) }
                 >+</button>
-                <button
-                  onClick={ () => deleteFromCart(product) }
-                >X</button>
               </div>
+                <button
+                  className='remove-cart-button'
+                  onClick={ () => deleteFromCart(product) }
+                >Remover</button>
+              <h3
+                className='product-at-cart-price'
+              >
+                R${ (product.price) * (product.quantity).toFixed(2) }
+              </h3>
             </section>
         ))
       }

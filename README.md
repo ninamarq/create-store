@@ -2,11 +2,9 @@
 
 Site / App de compras :shopping: para trabalhar conhecimentos de React Hooks, utilizando API do Mercado Livre.
 
-## Lista de requisitos
----
 
 ## Documentação da API do Mercado Livre
-Para realizar buscas de produtos para renderização, vocês foi consultado os seguintes endpoints:
+Para realizar buscas de produtos para renderização, foi consultado os seguintes endpoints:
 
 - Para listar as categorias disponíveis:
   - Tipo da requisição: `GET`
@@ -61,5 +59,60 @@ Exemplo de como a requisição de categorias é recebida, como exemplo foi utili
   "neighborhood": "Centro",
   "city": "Belo Horizonte",
   "state": "MG"
+}
+```
+
+## Bibliotecas
+
+### React Toastify
+Para obter notificação ao adicionar carrinho, foi utilizado a seguinte biblioteca:
+ - Endereço: https://fkhadra.github.io/react-toastify/introduction
+
+  Instalação com npm:
+
+```
+npm install --save react-toastify
+```
+
+Exemplo de aplicação, retirada da documentação.
+
+```
+  import React from 'react';
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';ReactToastify.min.css';
+
+  function App(){
+    const notify = () => toast("Wow so easy !");
+
+    return (
+      <div>
+        <button onClick={notify}>Notify !</button>
+        <ToastContainer />
+      </div>
+    );
+  }
+```
+
+### React Icons
+Para adicionar ícones, foi utilizado a biblioteca do React, React Icons.
+
+Instalação:
+
+```
+npm install react-icons --save
+```
+
+E acessando o endereço abaixo, é possível procurar os ícones de cada seção.
+https://react-icons.github.io/react-icons
+
+Exemplo de utilização.
+```
+
+import { FaBeer } from 'react-icons/fa';
+
+class Question extends React.Component {
+  render() {
+    return <h3> Lets go for a <FaBeer />? </h3>
+  }
 }
 ```

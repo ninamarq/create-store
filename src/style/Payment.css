@@ -1,0 +1,275 @@
+.shopping-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  width: 100rem;
+  border-radius: 0.625rem; /* 10px */
+  box-shadow: 0.3125rem  /* 5px */0.3125rem  /* 5px */0.3125rem  /* 5px */0.3125rem  /* 5px */rgb(221, 221, 221);
+  background-color: #FFF;
+}
+
+.form-buyer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.products-form {
+  display: inline;
+  width: 90rem;
+  padding: 0.5rem;
+}
+
+.products-form h3 {
+  color: #383838;
+  padding: 0.25rem;
+}
+
+.products-form .product-card-check {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-bottom: 1px solid #b8b8b8;
+}
+
+.products-form .product-card-check img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.products-form .product-card-check h4 {
+  color: #444444;
+  padding: 1rem;
+}
+
+.product-card-check .product-card-check-title {
+  text-align: center;
+  width: 30rem;
+}
+
+.product-card-check .product-card-check-other {
+  text-align: center;
+  width: 5rem;
+}
+
+.buyer-data-form {
+  display: flex;
+  flex-direction: column;
+  width: 90rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #b8b8b8;
+  border-top: 1px solid #b8b8b8;
+}
+
+.buyer-data-form form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buyer-data-form form input {
+  padding: 0.75rem;
+  margin: 0.75rem;
+  width: 18rem;
+}
+
+.buyer-data-form form select {
+  padding: 0.75rem;
+  margin: 0.75rem;
+  width: 20rem;
+}
+
+.buyer-data-form h3 {
+  color: #383838;
+  padding: 0.25rem;
+}
+
+.payment-form {
+  display: inline;
+  padding: 2rem;
+  text-align: left;
+  color: #1f1f1f;
+  width: 90rem;
+}
+
+.payment-form svg {
+  border: 1px solid #b8b8b8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.payment-form svg:hover {
+  border: 1px solid #585858;
+  cursor: pointer;
+  color: #0a0a0a;
+}
+
+.payment-form input[type=radio] {
+  display: none;
+}
+
+.payment-form input {
+  padding: 0.75rem;
+  margin: 0.75rem;
+  width: 18rem;
+  height: 1.5rem;
+}
+
+.confirm-form-button {
+  background-color: rgba(53, 156, 118, 0.897);
+  padding: 0.625rem; /* 10px */;
+  margin: 0.825rem; /* 10px */;
+  margin-left: 2rem;
+  border-radius: 0.3125rem; /* 5px */
+  border: 0;
+  color: #FFF;
+  width: 15rem; /* 90px */
+  height: 3rem; /* 90px */
+  align-self: flex-end;
+}
+
+.confirm-form-button:hover {
+  cursor: pointer;
+  background-color: #3EB68A;
+}
+
+.product-card-check-price {
+  text-align: right;
+}
+
+.confirming-data-container {
+  display: flex;
+  flex-direction: column;
+  color: #383838;
+}
+
+.confirming-data-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0.625rem;
+  padding: 0.625rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.data-confirming {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.data-confirming p {
+  width: 20rem;
+  height: 2rem;
+  display: inline;
+  text-align: left;
+  border: 1px solid #b8b8b8;
+  border-radius: 0.625rem;
+}
+
+.confirming-data-title {
+  border-bottom: 1px solid #7e7e7e;
+  font-size: 1.5rem;
+  color: #585858;
+  height: 3rem;
+  width: 20rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.confirming-data-form p {
+  padding: 0.625rem;
+  margin: 0.625rem;
+  font-size: 1.15rem;
+}
+
+.card-confirming {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #585858;
+  width: 95rem;
+}
+
+.card-confirming img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.card-confirming .card-confirming-title{
+  width: 30rem;
+}
+
+.card-confirming .card-confirming-qtd {
+  width: 6rem;
+  text-align: center;
+}
+
+.card-confirming .card-confirming-price {
+  width: 10rem;
+  text-align: center;
+}
+
+.confirming-total-price {
+  text-align: right;
+  color: #585858;
+  margin: 0.825rem; /* 10px */;
+  font-size: 1.5rem;
+}
+
+.confirming-data-container button {
+  background-color: rgba(53, 156, 118, 0.897);
+  padding: 0.625rem; /* 10px */;
+  margin: 0.825rem; /* 10px */;
+  border-radius: 0.3125rem; /* 5px */
+  border: 0;
+  color: #FFF;
+  width: 15rem; /* 90px */
+  height: 3rem; /* 90px */
+  align-self: flex-end;
+}
+
+.confirming-data-container button:hover {
+  cursor: pointer;
+  background-color: #3EB68A;
+}
+
+.final-confirm {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card-payment-confirm {
+  display: flex;
+  flex-direction: column;
+  width: 90rem;
+  height: 10rem;
+}
+
+.card-confirming-data p{
+  padding: 0.625rem;
+  margin: 0.625rem;
+  font-size: 1.15rem;
+}
+
+.card-confirming-data {
+  height: 5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #47cf9d;
+  font-size: 12px;
+  border: 1px solid #266e54;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}

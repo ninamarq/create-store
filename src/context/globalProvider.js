@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { getProductsByCategory, getProductsFromCategoryAndQuery } from '../services/productsAPI';
 import globalContext from './globalContext';
-
 function Provider({ children }) {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
@@ -84,6 +83,14 @@ function Provider({ children }) {
     setSearch('');
   }
 
+  function limitCarac(title) {
+    const limit = 60;
+    if(title.length > limit) {
+      return `${ title.slice(0, limit) }...`;
+    }
+    return title;
+  }
+
   const provideObj = {
     search,
     handleSearch,
@@ -104,6 +111,7 @@ function Provider({ children }) {
     finishShop,
     setFinished,
     clearCart,
+    limitCarac,
   };
 
   return (

@@ -4,10 +4,19 @@ import '../style/ProductDetail.css';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { AiFillThunderbolt } from 'react-icons/ai';
 import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 export default function ProductDetail() {
   const { details, addToCart } = useContext(globalContext);
   const starSeller = details.seller.seller_reputation.level_id && details.seller.seller_reputation.level_id.split('')[0];
+
+  function alertAddToCart() {
+    toast.success("Adicionado ao Carrinho!", {
+      position: toast.POSITION.TOP_RIGHT,
+      pauseOnHover: false,
+      closeOnClick: true,
+    });  
+  }
 
   return(
     <div
@@ -110,9 +119,23 @@ export default function ProductDetail() {
             <h4>Produto Indisponível</h4>
           )
         }
-        <button
-          onClick={() => addToCart(details)}
-        >Adicionar ao Carrinho</button>
+        {
+          details.available_quantity > 0 ? (
+            <button
+            type='button'
+            onClick={() => {
+              alertAddToCart()
+              addToCart(details)
+            }}
+            >Adicionar ao Carrinho</button>
+          ) : (
+            <button
+              type='button'
+              disabled='true'
+            >Produto Indisponível</button>
+          )
+        }
+
       </section>
     </div>
   )

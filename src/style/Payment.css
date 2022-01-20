@@ -88,9 +88,11 @@
 
 .payment-form {
   display: inline;
-  padding: 1rem;
-  text-align: center;
+  padding: 2rem;
+  text-align: left;
   color: #1f1f1f;
+  width: 90rem;
+  border: 1px solid red;
 }
 
 .payment-form svg {

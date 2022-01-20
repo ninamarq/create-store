@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import globalContext from '../context/globalContext';
 import { useNavigate } from "react-router-dom";
 import { AiFillThunderbolt } from 'react-icons/ai';
-import { FaCartPlus } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 export default function ProductCard(props) {

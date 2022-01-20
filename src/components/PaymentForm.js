@@ -42,7 +42,7 @@ export default function PaymentForm() {
     <section
         className="payment-form"
       >
-        <h2>Método de Pagamento</h2>
+        <h3>Método de Pagamento</h3>
         <label
           htmlFor="boleto"
         >

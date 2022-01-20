@@ -37,6 +37,7 @@ export default function Search() {
       onClick={ handleClickSearch }>
         <img
           src="https://img.icons8.com/ios/50/000000/search--v4.png"
+          alt='Lupa para pesquisa'
           width="20px"
         />
       </buttton>

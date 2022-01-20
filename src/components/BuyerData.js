@@ -18,6 +18,7 @@ export default function BuyerData() {
           && key !== "securityCode" && key !== "comp" ) {
           return (buyerData[key].length === 0 || buyerData[key] === 0);
         }
+        return key
       })
     ) : (
       userKeys.some((key) => (key !== "comp") && (

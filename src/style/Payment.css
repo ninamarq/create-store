@@ -4,15 +4,16 @@
   padding: 1rem;
   margin: 1.5rem auto;
   width: 100rem;
-  border: 1px solid red;
+  border-radius: 0.625rem; /* 10px */
+  box-shadow: 0.3125rem  /* 5px */0.3125rem  /* 5px */0.3125rem  /* 5px */0.3125rem  /* 5px */rgb(221, 221, 221);
+  background-color: #FFF;
 }
 
 .form-buyer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;  /* center */
-  border: 1px solid saddlebrown;
+  align-items: center;
 }
 
 .products-form {
@@ -92,7 +93,6 @@
   text-align: left;
   color: #1f1f1f;
   width: 90rem;
-  border: 1px solid red;
 }
 
 .payment-form svg {
@@ -118,4 +118,26 @@
   margin: 0.75rem;
   width: 18rem;
   height: 1.5rem;
+}
+
+.payment-form input:focus {
+  border: 1px solid red;
+}
+
+.confirm-form-button {
+  background-color: rgba(53, 156, 118, 0.897);
+  padding: 0.625rem; /* 10px */;
+  margin: 0.825rem; /* 10px */;
+  margin-left: 2rem;
+  border-radius: 0.3125rem; /* 5px */
+  border: 0;
+  color: #FFF;
+  width: 15rem; /* 90px */
+  height: 3rem; /* 90px */
+  align-self: flex-end;
+}
+
+.confirm-form-button:hover {
+  cursor: pointer;
+  background-color: #3EB68A;
 }

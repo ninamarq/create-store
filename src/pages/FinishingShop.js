@@ -30,9 +30,6 @@ export default function FinishingShop() {
       {
         validateShopStatus && thanksForBuying()
       }
-      <button
-        onClick={() => navigate('/cart')}
-      >Voltar</button>
     </div>
   )
 }

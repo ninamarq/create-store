@@ -40,6 +40,7 @@ export default function BuyerData() {
       <BuyerDataForm />
       <PaymentForm />
       <button
+        className="confirm-form-button"
         type="button"
         onClick={ () => dataValidation() }
       >Confirmar Compra</button>

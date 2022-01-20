@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 1rem;
   margin: 1.5rem auto;
-  width: 100rem;
+  width: 75rem;
   border-radius: 0.625rem; /* 10px */
   box-shadow: 0.3125rem  /* 5px */0.3125rem  /* 5px */0.3125rem  /* 5px */0.3125rem  /* 5px */rgb(221, 221, 221);
   background-color: #FFF;
@@ -18,7 +18,7 @@
 
 .products-form {
   display: inline;
-  width: 90rem;
+  width: 65rem;
   padding: 0.5rem;
 }
 
@@ -31,8 +31,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem;
-  margin: 0.5rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
   border-bottom: 1px solid #b8b8b8;
 }
 
@@ -48,7 +48,7 @@
 
 .product-card-check .product-card-check-title {
   text-align: center;
-  width: 30rem;
+  width: 20rem;
 }
 
 .product-card-check .product-card-check-other {
@@ -59,7 +59,7 @@
 .buyer-data-form {
   display: flex;
   flex-direction: column;
-  width: 90rem;
+  width: 65rem;
   padding: 0.5rem;
   border-bottom: 1px solid #b8b8b8;
   border-top: 1px solid #b8b8b8;
@@ -92,7 +92,7 @@
   padding: 2rem;
   text-align: left;
   color: #1f1f1f;
-  width: 90rem;
+  width: 65rem;
 }
 
 .payment-form svg {
@@ -100,7 +100,7 @@
   border-radius: 0.5rem;
   padding: 1rem;
   margin: 0.5rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .payment-form svg:hover {
@@ -151,8 +151,8 @@
 .confirming-data-form {
   display: flex;
   flex-direction: column;
-  margin: 0.625rem;
-  padding: 0.625rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   justify-content: center;
   align-items: flex-start;
 }
@@ -163,8 +163,8 @@
 }
 
 .data-confirming p {
-  width: 20rem;
-  height: 2rem;
+  width: 30rem;
+  height: 1.5rem;
   display: inline;
   text-align: left;
   border: 1px solid #b8b8b8;
@@ -173,7 +173,7 @@
 
 .confirming-data-title {
   border-bottom: 1px solid #7e7e7e;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #585858;
   height: 3rem;
   width: 20rem;
@@ -193,7 +193,7 @@
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid #585858;
-  width: 95rem;
+  width: 65rem;
 }
 
 .card-confirming img {

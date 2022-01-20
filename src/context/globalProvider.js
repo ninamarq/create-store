@@ -24,7 +24,7 @@ function Provider({ children }) {
     validate: '',
     securityCode: 0,
   });
-  const [confirmShop, setConfirm] = useState(false);
+  const [confirmShop, setConfirm] = useState(true);
   const [finishShop, setFinished] = useState(false);
 
 

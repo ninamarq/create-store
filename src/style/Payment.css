@@ -120,10 +120,6 @@
   height: 1.5rem;
 }
 
-.payment-form input:focus {
-  border: 1px solid red;
-}
-
 .confirm-form-button {
   background-color: rgba(53, 156, 118, 0.897);
   padding: 0.625rem; /* 10px */;
@@ -140,4 +136,131 @@
 .confirm-form-button:hover {
   cursor: pointer;
   background-color: #3EB68A;
+}
+
+.product-card-check-price {
+  text-align: right;
+}
+
+.confirming-data-container {
+  display: flex;
+  flex-direction: column;
+  color: #383838;
+}
+
+.confirming-data-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0.625rem;
+  padding: 0.625rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.data-confirming {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.data-confirming p {
+  width: 20rem;
+  height: 2rem;
+  display: inline;
+  text-align: left;
+  border: 1px solid #b8b8b8;
+  border-radius: 0.625rem;
+}
+
+.confirming-data-title {
+  border-bottom: 1px solid #7e7e7e;
+  font-size: 1.5rem;
+  color: #585858;
+  height: 3rem;
+  width: 20rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.confirming-data-form p {
+  padding: 0.625rem;
+  margin: 0.625rem;
+  font-size: 1.15rem;
+}
+
+.card-confirming {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #585858;
+  width: 95rem;
+}
+
+.card-confirming img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.card-confirming .card-confirming-title{
+  width: 30rem;
+}
+
+.card-confirming .card-confirming-qtd {
+  width: 6rem;
+  text-align: center;
+}
+
+.card-confirming .card-confirming-price {
+  width: 10rem;
+  text-align: center;
+}
+
+.confirming-total-price {
+  text-align: right;
+  color: #585858;
+  margin: 0.825rem; /* 10px */;
+  font-size: 1.5rem;
+}
+
+.confirming-data-container button {
+  background-color: rgba(53, 156, 118, 0.897);
+  padding: 0.625rem; /* 10px */;
+  margin: 0.825rem; /* 10px */;
+  border-radius: 0.3125rem; /* 5px */
+  border: 0;
+  color: #FFF;
+  width: 15rem; /* 90px */
+  height: 3rem; /* 90px */
+  align-self: flex-end;
+}
+
+.confirming-data-container button:hover {
+  cursor: pointer;
+  background-color: #3EB68A;
+}
+
+.final-confirm {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card-payment-confirm {
+  display: flex;
+  flex-direction: column;
+  width: 90rem;
+  height: 10rem;
+}
+
+.card-confirming-data p{
+  padding: 0.625rem;
+  margin: 0.625rem;
+  font-size: 1.15rem;
+}
+
+.card-confirming-data {
+  height: 5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

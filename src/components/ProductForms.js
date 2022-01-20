@@ -37,7 +37,10 @@ export default function ProductForms() {
           </section>
         ))
       }
-      <h3>Total:
+      <h3
+        className="product-card-check-price"
+      >
+        Total:
         {
           cart.reduce((previous, product) => previous + ( product.price * product.quantity), 0).toFixed(2)
         }

@@ -23,7 +23,7 @@ export default function PaymentForm() {
           onChange={handleChange}
         />
         <input
-          type="date"
+          type="month"
           placeholder="Validade Cartão"
           name="validate"
           onChange={handleChange}

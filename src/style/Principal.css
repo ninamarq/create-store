@@ -119,3 +119,12 @@
   font-size: 0.80rem;
   color: rgba(3, 3, 3, 0.733);
 }
+
+.principal-container #loading-gif {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin: auto auto;
+}

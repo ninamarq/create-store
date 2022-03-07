@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import globalContext from '../context/globalContext';
 import ProductCard from '../components/ProductCard';
 import { getProductsByQuery } from '../services/productsAPI';
 import notFound from '../images/notFound.svg';
+import loading from '../images/loading.gif';
 import '../style/Principal.css';
 
 export default function Principal() {
@@ -10,11 +11,13 @@ export default function Principal() {
     products, setProducts,
     finishShop, setFinished, clearCart,
     setData } = useContext(globalContext);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(async () => {
     if (category.length === 0 && search.length === 0) {
       const initial_products = await getProductsByQuery("gamer");
-      setProducts(initial_products);
+      await setProducts(initial_products);
+      setTimeout(() => setLoading(false), 2000);      
     }
     if (finishShop) {
       setFinished(false);
@@ -42,7 +45,7 @@ export default function Principal() {
   }, []);
 
   const verifyProducts = (
-    products.length === 0 ?
+    products.length && isLoading === 0 ?
       (
       <section
         className='no-products-found'
@@ -60,17 +63,27 @@ export default function Principal() {
       : <ProductCard list={ products }/>
   );
 
-  const checkingResults = (category.length === 0 || category === "Categorias")
+  const checkingResults = (category.length === 0 || category === "Categorias");
+
+  const renderCreateStore = (
+    checkingResults ? verifyProducts
+      : (
+        <ProductCard list={ products }/>
+      )
+  );
 
   return (
     <div
       className='principal-container'
     >
       {
-        checkingResults ? verifyProducts
-        : (
-          <ProductCard list={ products }/>
-        )
+        isLoading ? (
+          <img
+            src={ loading }
+            id="loading-gif"
+            alt="Carregando dados"
+          />
+        ) : renderCreateStore
       }
     </div>
   );

@@ -15,6 +15,7 @@
   color: #FFF;
   background-color: #3EB68A;
   border: 0;
+  transition: 0.5s;
   text-align: center;
 }
 
@@ -33,6 +34,7 @@
 }
 
 #title-logo {
+  transition: 0.5s;
   font-size: small;
 }
 
@@ -93,5 +95,7 @@
 }
 
 .to-cart:hover {
+  color: rgba(255, 255, 255, 0.63);
+  transition: 0.5s;
   cursor: pointer;
 }

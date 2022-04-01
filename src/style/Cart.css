@@ -130,7 +130,11 @@
   height: 3rem; /* 90px */
 }
 
-.cart-list .footer-cart button:hover {
+.cart-list .footer-cart .disabled-btn {
+  background-color: rgba(53, 156, 118, 0.295);
+}
+
+.cart-list .footer-cart .normal-btn:hover {
   cursor: pointer;
   background-color: #3EB68A;
 }

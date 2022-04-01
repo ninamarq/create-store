@@ -1,11 +1,12 @@
 .header-app {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 1fr;
+  grid-auto-rows: 5rem;
+  justify-content: center;
   align-items: center;
   color: #FFF;
   font-family: 'Kanit', sans-serif;
   background-color: #3EB68A;
-  height: 3.75rem; /* 60px */
 }
 
 .header-app select {
@@ -35,7 +36,7 @@
 
 #title-logo {
   transition: 0.5s;
-  font-size: small;
+  padding: 1rem;
 }
 
 #title-logo:hover {
@@ -47,11 +48,8 @@
 .search-bar {
   display: inline-flex;
   width: 100%;
-  max-width: 32.25rem; /* 500px */
   font-family: 'Kanit', sans-serif;
-  padding: 2%;
   font-size: 1rem;
-  border: 10;
 }
 
 .searchbar-input {
@@ -59,7 +57,7 @@
   padding: 0.625rem; /* 10px */
   outline: none;
   border: 0;
-  border-radius: 5px 0 0 5px;
+  border-radius: 10px 0 0 10px;
   background: #FFF;
   transition: background-color 0.25, box-shadow 0.25s;
 }
@@ -82,7 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0 0.3125rem 0.3125rem 0; /* 0 5px 5px 0 */
+  border-radius: 0 0.625rem 0.625rem 0; /* 0 5px 5px 0 */
   cursor: pointer;
   user-select: none;
 }
@@ -90,12 +88,13 @@
 .to-cart {
   background-color: #3EB68A;
   border: 0;
+  transition: 0.5s;
   padding: 0.625rem; /* 10px */
   color: #FFF;
 }
 
 .to-cart:hover {
-  color: rgba(255, 255, 255, 0.63);
+  color: rgba(255, 255, 255, 0.753);
   transition: 0.5s;
   cursor: pointer;
 }

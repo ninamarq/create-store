@@ -8,6 +8,9 @@ import '../style/Cart.css';
 export default function Cart() {
   const navigate = useNavigate()
   const { cart } = useContext(globalContext);
+
+  const disabled = cart.length > 0 ? false : true;
+
   return(
     <div
       className="cart-list"
@@ -40,6 +43,8 @@ export default function Cart() {
           cart.reduce((previous, product) => previous + ( product.price * product.quantity), 0).toFixed(2)
         }</h2>
         <button
+          disabled={ disabled }
+          className={ disabled ? 'disabled-btn' : 'normal-btn' }
           onClick={() => navigate('/finish-shop/payment')}
         >Continuar Compra</button>
       </section>

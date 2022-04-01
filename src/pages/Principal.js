@@ -17,7 +17,7 @@ export default function Principal() {
     if (category.length === 0 && search.length === 0) {
       const initial_products = await getProductsByQuery("gamer");
       await setProducts(initial_products);
-      setTimeout(() => setLoading(false), 2000);      
+      setLoading(false); 
     }
     if (finishShop) {
       setFinished(false);
@@ -40,8 +40,10 @@ export default function Principal() {
       });
       clearCart();
       const initial_products = await getProductsByQuery("gamer");
+      setLoading(false);
       setProducts(initial_products);
     }
+    setLoading(false); 
   }, []);
 
   const verifyProducts = (

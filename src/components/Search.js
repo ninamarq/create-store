@@ -8,7 +8,8 @@ export default function Search() {
     search, setProducts } = useContext(globalContext);
   const navigate = useNavigate();
 
-  async function handleClickSearch() {
+  async function handleSubmitSearch(event) {
+    event.preventDefault();
     if (category.length === 0) {
       const productsResult = await getProductsByQuery(search);
       setProducts(productsResult);
@@ -22,7 +23,8 @@ export default function Search() {
   }
 
   return(
-    <div
+    <form
+    onSubmit={ (e) => handleSubmitSearch(e) }
     className='search-bar'
     >
       <input
@@ -34,13 +36,13 @@ export default function Search() {
       <buttton
       type="button"
       id="searchbar-button"
-      onClick={ handleClickSearch }>
+      onClick={ (e) => handleSubmitSearch(e) }>
         <img
           src="https://img.icons8.com/ios/50/000000/search--v4.png"
           alt='Lupa para pesquisa'
           width="20px"
         />
       </buttton>
-    </div>
+    </form>
   );
 }

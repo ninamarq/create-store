@@ -26,7 +26,7 @@ export default function ProductCard(props) {
         : list.map((product) => (
           <div
             className='product-card'
-            key={ product.id }
+            key={ `${ product.id }-${ product.title }` }
           >
             <img
               onClick={() => {

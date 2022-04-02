@@ -39,50 +39,53 @@ export default function ProductCard(props) {
               />
             <section
               className='product-text'
-              onClick={() => {
-                setDetail(product);
-                navigate(`products/${ product.id }`)
-              }}
             >
               <div
-                className='product-prices'
+                onClick={() => {
+                  setDetail(product);
+                  navigate(`products/${ product.id }`)
+                }}
               >
-                <h3>R$ { product.price.toFixed(2) }</h3>
-                {
-                  product.original_price && (
-                    <p
-                      className='discount-price'
-                    >
-                      R$ { product.original_price.toFixed(2) }
-                    </p>
-                  )
-                }
-                <p
-                  className='price-installment'
+                <div
+                  className='product-prices'
                 >
-                  em até <b>12x</b> de <b>R$ { (product.price/12).toFixed(2) }</b>
-                </p>
-              </div>
-              <p
-                className='product-card-title'
-              >{ limitCarac(product.title) }</p>
-              {
-                product.shipping.free_shipping && (
-                  <div
-                    className='free-shipping'
+                  <h3>R$ { product.price.toFixed(2) }</h3>
+                  {
+                    product.original_price && (
+                      <p
+                        className='discount-price'
+                      >
+                        R$ { product.original_price.toFixed(2) }
+                      </p>
+                    )
+                  }
+                  <p
+                    className='price-installment'
                   >
-                    <h4>Frete Grátis</h4>
-                    <AiFillThunderbolt />
-                  </div>
-              )
-              }
+                    em até <b>12x</b> de <b>R$ { (product.price/12).toFixed(2) }</b>
+                  </p>
+                </div>
+                <p
+                  className='product-card-title'
+                >{ limitCarac(product.title) }</p>
+                {
+                  product.shipping.free_shipping && (
+                    <div
+                      className='free-shipping'
+                    >
+                      <h4>Frete Grátis</h4>
+                      <AiFillThunderbolt />
+                    </div>
+                )
+                }
+              </div>
+              <button
+                onClick={ () => {
+                  alertAddToCart()
+                  addToCart(product) 
+                }}
+              >Adicionar ao Carrinho</button>
             </section>
-            <button
-              onClick={ () => {
-                alertAddToCart()
-                addToCart(product) 
-              }}
-            >Adicionar ao Carrinho</button>
           </div>
         ))
       }

@@ -275,3 +275,211 @@
   border: 1px solid #266e54;
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 400px)
+{
+  .shopping-form {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .shopping-form .form-buyer {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .shopping-form .form-buyer .products-form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .product-card-check {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .buyer-data-form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .buyer-data-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buyer-data-form form input {
+    border: 1px solid #b8b8b8;
+    margin: 1rem 0;
+  }
+
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .confirm-form-button {
+    align-self: center;
+    width: 90%;
+    margin: 0 0 1rem 0;
+  }
+
+  .confirming-data-form {
+    padding: 0;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .confirming-data-form .data-confirming {
+    width: 100%;
+  }
+
+  .confirming-data-form .card-confirming {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: .5rem 0;
+    padding: .5rem 0;
+  }
+
+  .confirming-data-form .card-confirming-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .final-confirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .confirming-data-container button {
+    align-self: center;
+    width: 90%;
+  }
+}
+
+@media (max-width: 900px)
+{
+  .shopping-form {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .shopping-form .form-buyer {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .shopping-form .form-buyer .products-form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .product-card-check {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .buyer-data-form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .buyer-data-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buyer-data-form form input {
+    border: 1px solid #b8b8b8;
+    margin: 1rem 0;
+  }
+
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .confirm-form-button {
+    align-self: center;
+    width: 90%;
+    margin: 0 0 1rem 0;
+  }
+
+  .confirming-data-form {
+    padding: 0;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .confirming-data-form .data-confirming {
+    width: 100%;
+  }
+
+  .confirming-data-form .card-confirming {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: .5rem 0;
+    padding: .5rem 0;
+  }
+
+  .confirming-data-form .card-confirming-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .final-confirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .confirming-data-container button {
+    align-self: center;
+    width: 90%;
+  }
+}

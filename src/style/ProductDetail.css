@@ -124,3 +124,23 @@
     align-self: center;
   }
 }
+
+@media (max-width: 900px)
+{
+  .product-detail {
+    display: flex;
+    flex-direction: column;
+  }
+  .product-specification {
+    border-right: 0;
+    border-left: 0;
+  }
+  .product-info-buy {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #888888;
+  }
+}

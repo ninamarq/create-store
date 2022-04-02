@@ -174,4 +174,13 @@
     margin: 1rem 0 0 .25rem;
     width: fit-content;
   }
+
+  .principal-container #loading-gif {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8rem auto;
+    width: 100%;
+  }
 }

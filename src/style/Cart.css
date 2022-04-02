@@ -142,3 +142,50 @@
 .cart-list .footer-cart h2 {
   color: rgb(70, 70, 70);
 }
+
+@media (max-width: 400px)
+{
+  .cart-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem 0;
+  }
+
+  .cart-list .product-at-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cart-list .product-at-cart .product-at-cart-title {
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+  }
+
+  .product-cart-text .free-shipping-cart{
+    align-self: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cart-list .footer-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+  }
+}

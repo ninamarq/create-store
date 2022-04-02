@@ -15,8 +15,9 @@ function Header() {
         id="title-logo"
         onClick={ () => navigate('/') }
       >
-        <h2
-        >createStore( )</h2>
+        <h2>
+          createStore
+        </h2>
       </section>
       <Search />
       <Categories />

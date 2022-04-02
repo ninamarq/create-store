@@ -98,3 +98,27 @@
   transition: 0.5s;
   cursor: pointer;
 }
+
+@media (max-width: 400px)
+{
+  .header-app {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+  }
+
+  #title-logo {
+    font-size: 50%;
+  }
+
+  .search-bar {
+    width: 50%;
+  }
+
+  .header-app select {
+    width: 20%;
+  }
+
+  .to-cart {
+    margin: 0 .25rem;
+  }
+}

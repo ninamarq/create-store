@@ -7,8 +7,13 @@ Olá!
 Site / App de compras :shopping: para trabalhar conhecimentos de React Hooks, utilizando API do Mercado Livre. 🛍️ 🛒
 
 ## 🖼️ Imagens do Projeto
+
 <div align="center">
-  <img src="./assets/telaInsomnia.png">
+  <img src="./createstore.png"  width="100%">
+</div>
+
+<div align="center">
+  <img src="./gif-createstore.gif"  width="30%">
 </div>
 
 ## 🧰 Tecnologias e Bibliotecas

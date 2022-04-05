@@ -1,6 +1,8 @@
-# createStore( ) - <a href="createstore.netlify.app/">createstore.netlify.app/</a>
+# createStore( )
 
 Olá!
+
+Link projeto: https://createstore.netlify.app/
 
 <!-- Sobre o Projeto -->
 ## Sobre o Projeto
